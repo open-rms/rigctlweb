@@ -1,3 +1,9 @@
+---
+title: Integrations
+description: Share one radio through rigctld with Pat, WSJT-X, fldigi, JS8Call and other programs.
+order: 8
+---
+
 # Integrations
 
 rigctlWeb talks to a radio through Hamlib's rigctld, and so do many other ham radio programs. Because rigctld accepts several TCP clients, rigctlWeb and these programs can share one rigctld (and so one radio) instead of fighting over the serial port. Point each program at the same host and port (default 4532). In Hamlib, the "NET rigctl" rig is model number 2 (see rigctl -l).

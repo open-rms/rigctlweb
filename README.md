@@ -4,6 +4,8 @@
 
 A live, browser-based radio control panel for [Hamlib](https://hamlib.github.io/)'s `rigctld`, in the spirit of flrig but built for the web: big tuning display, real-time meters, every control your radio advertises, and a clean settings page. One static binary, runs on Linux (first-class), Windows and macOS.
 
+**Website, downloads and docs: [rigctlweb.openrms.dev](https://rigctlweb.openrms.dev)** (the docs are also in [docs/](docs/)).
+
 > Status: early development. The core control surface works; see the roadmap.
 
 ## Quick start
@@ -75,4 +77,5 @@ No license keys, no paywalls, no kill switches, ever, and competing or interoper
 
 ## License
 
-MIT. See [LICENSE](LICENSE).
+MIT. See [LICENSE](LICENSE). The documentation in `docs/` is CC-BY-4.0
+([LICENSE-CC-BY-4.0](LICENSE-CC-BY-4.0)).

@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // rigctlweb.openrms.dev: assets-only Worker on the same Cloudflare account as openrms.dev.
+  "name": "rigctlweb-site",
+  "account_id": "5ded550beb08feb732e46a624c8939a4",
+  "compatibility_date": "2026-11-26",
+  "routes": [{ "pattern": "rigctlweb.openrms.dev", "custom_domain": true }],
+  "assets": {
+    "directory": "./build",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+}

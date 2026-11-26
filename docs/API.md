@@ -1,3 +1,9 @@
+---
+title: API
+description: The versioned REST API (v1) with an OpenAPI 3.1 description, for loggers, dashboards and scripts. It never keys the transmitter.
+order: 7
+---
+
 # rigctlWeb API
 
 rigctlWeb publishes a small, versioned HTTP API (v1) that any program can use: a logger that fills in frequency and mode, a Home Assistant sensor, a script that changes band, a dashboard, or another web app. The API is described in [OpenAPI 3.1](https://spec.openapis.org/oas/v3.1.0), so you can generate a client for most languages.
