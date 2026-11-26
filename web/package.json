@@ -39,7 +39,7 @@
 		"@lucide/svelte": "^1.73.0",
 		"bits-ui": "^2.21.0",
 		"clsx": "^2.1.1",
-		"tailwind-merge": "^3.7.0",
+		"tailwind-merge": "^3.7.1",
 		"tailwind-variants": "^3.3.1"
 	}
 }
