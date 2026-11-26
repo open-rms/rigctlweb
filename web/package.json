@@ -22,7 +22,7 @@
 		"@scalar/api-reference": "^1.83.0",
 		"@scalar/openapi-parser": "^0.29.27",
 		"@sveltejs/adapter-static": "^4.0.1",
-		"@sveltejs/kit": "^3.0.0",
+		"@sveltejs/kit": "^3.4.0",
 		"@sveltejs/vite-plugin-svelte": "^7.3.2",
 		"@tailwindcss/vite": "^4.3.5",
 		"@types/node": "^26.6.6",
