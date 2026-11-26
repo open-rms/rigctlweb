@@ -25,15 +25,10 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y libhamlib-utils
-      - name: Start dummy rigctld
-        run: |
-          rigctld -m 1 -t 4540 &
-          sleep 2
       - name: Vet
         run: go vet ./...
-      - name: Test
+      - name: Test (starts its own dummy rigctld)
         run: go test ./...
-        env:
 
   web:
     runs-on: ubuntu-latest
