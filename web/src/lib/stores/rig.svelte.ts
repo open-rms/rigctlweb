@@ -4,6 +4,9 @@ import { views } from '#lib/stores/views.svelte';
 
 type Pending = { resolve: () => void; reject: (e: Error) => void };
 
+/** Give up on a command the server never answered (its own budget is at most 15 s). */
+export const COMMAND_TIMEOUT_MS = 30_000;
+
 /** App-wide reactive store: session, rig list, selected rig's live state and its WebSocket. */
 class App {
 	ready = $state(false);
@@ -144,6 +147,15 @@ class App {
 		this.#ws = null;
 		this.wsUp = false;
 		ws?.close();
+		this.#failPending('connection to rigctlWeb closed');
+	}
+
+	/** Results for commands sent on a closed socket never arrive: fail them, so the busy
+	 *  indicator doesn't stay on. */
+	#failPending(reason: string) {
+		const pending = [...this.#pending.values()];
+		this.#pending.clear();
+		for (const p of pending) p.reject(new Error(reason));
 	}
 
 	#connect() {
@@ -175,6 +187,7 @@ class App {
 		ws.onclose = () => {
 			if (this.#ws !== ws) return;
 			this.wsUp = false;
+			this.#failPending('connection to rigctlWeb lost');
 			this.#track();
 			this.#timer = setTimeout(() => this.#connect(), Math.min(1000 * 2 ** this.#retry++, 10000));
 		};
@@ -188,7 +201,14 @@ class App {
 		this.#pendingCount++;
 		this.#syncBusy();
 		return new Promise<void>((resolve, reject) => {
-			this.#pending.set(id, { resolve, reject });
+			const timer = setTimeout(() => {
+				if (this.#pending.delete(id)) reject(new Error('no answer from rigctlWeb'));
+			}, COMMAND_TIMEOUT_MS);
+			const done = <A extends unknown[]>(f: (...a: A) => void) => (...a: A) => {
+				clearTimeout(timer);
+				f(...a);
+			};
+			this.#pending.set(id, { resolve: done(resolve), reject: done(reject) });
 			ws.send(JSON.stringify({ id, cmd, args }));
 		})
 			.catch((e: Error) => {
