@@ -1,0 +1,93 @@
+name: Bug report
+description: Something in rigctlWeb does not work as expected
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. If the problem only affects one radio model, the "Radio support" form may fit better.
+  - type: input
+    id: version
+    attributes:
+      label: rigctlWeb version
+      description: Output of `rigctlweb --version`, or the release tag.
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: OS and architecture
+      placeholder: Debian 13 arm64, Windows 11 amd64, macOS 15 arm64
+    validations:
+      required: true
+  - type: dropdown
+    id: run_method
+    attributes:
+      label: How rigctlWeb is run
+      options:
+        - Binary run by hand
+        - systemd service
+        - Docker
+        - hamstack plugin
+        - Other (describe below)
+    validations:
+      required: true
+  - type: input
+    id: radio
+    attributes:
+      label: Radio make and model, and Hamlib model number
+      placeholder: Icom IC-7300, model 3073
+    validations:
+      required: true
+  - type: textarea
+    id: rigctld
+    attributes:
+      label: rigctld version and command line
+      description: Output of `rigctld --version` and the exact command you use to start it.
+      render: shell
+    validations:
+      required: true
+  - type: dropdown
+    id: connection
+    attributes:
+      label: Connection type
+      description: Where the browser and rigctlWeb sit relative to each other and the radio.
+      options:
+        - Local (browser on the same machine)
+        - LAN (browser on another machine)
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. ...
+        2. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Relevant rigctlWeb and rigctld output. Run rigctld with `-vvvv` if you can.
+      render: shell
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I removed auth tokens, passwords, and any private personal data from the logs above.
+          required: true

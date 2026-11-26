@@ -1,0 +1,146 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *, .red *));
+
+/* Design tokens. Themes: light (default), .dark, .red (night / red-light, preserves dark adaptation). */
+:root {
+	--radius: 0.75rem;
+	--background: oklch(0.985 0.002 250);
+	--foreground: oklch(0.21 0.02 255);
+	--card: oklch(1 0 0);
+	--card-foreground: var(--foreground);
+	--popover: var(--card);
+	--popover-foreground: var(--foreground);
+	--primary: oklch(0.52 0.19 255);
+	--primary-foreground: oklch(0.98 0 0);
+	--secondary: oklch(0.95 0.008 255);
+	--secondary-foreground: oklch(0.28 0.03 255);
+	--muted: oklch(0.95 0.005 255);
+	--muted-foreground: oklch(0.5 0.02 255);
+	--accent: oklch(0.93 0.02 255);
+	--accent-foreground: var(--foreground);
+	--destructive: oklch(0.58 0.22 27);
+	--border: oklch(0.9 0.008 255);
+	--input: oklch(0.9 0.008 255);
+	--ring: oklch(0.52 0.19 255);
+	/* radio-specific */
+	--display: oklch(0.2 0.03 250);
+	--display-foreground: oklch(0.86 0.17 150);
+	--meter-ok: oklch(0.66 0.18 150);
+	--meter-warn: oklch(0.78 0.16 80);
+	--meter-hot: oklch(0.6 0.23 27);
+	--tx: oklch(0.58 0.24 27);
+}
+
+.dark {
+	--background: oklch(0.16 0.015 255);
+	--foreground: oklch(0.95 0.005 255);
+	--card: oklch(0.2 0.018 255);
+	--popover: oklch(0.22 0.018 255);
+	--primary: oklch(0.7 0.15 250);
+	--primary-foreground: oklch(0.15 0.02 255);
+	--secondary: oklch(0.26 0.02 255);
+	--secondary-foreground: oklch(0.95 0.005 255);
+	--muted: oklch(0.25 0.018 255);
+	--muted-foreground: oklch(0.7 0.02 255);
+	--accent: oklch(0.3 0.03 255);
+	--destructive: oklch(0.7 0.19 22);
+	--border: oklch(1 0 0 / 11%);
+	--input: oklch(1 0 0 / 16%);
+	--ring: oklch(0.7 0.15 250);
+	--display: oklch(0.12 0.015 255);
+	--display-foreground: oklch(0.88 0.19 150);
+}
+
+/* Night mode: red-only so it won't wreck your dark adaptation at the operating desk. */
+.red {
+	--background: oklch(0.12 0.03 25);
+	--foreground: oklch(0.7 0.18 25);
+	--card: oklch(0.15 0.04 25);
+	--popover: oklch(0.17 0.04 25);
+	--primary: oklch(0.6 0.2 25);
+	--primary-foreground: oklch(0.1 0.02 25);
+	--secondary: oklch(0.2 0.05 25);
+	--secondary-foreground: oklch(0.7 0.18 25);
+	--muted: oklch(0.19 0.045 25);
+	--muted-foreground: oklch(0.55 0.14 25);
+	--accent: oklch(0.25 0.06 25);
+	--accent-foreground: oklch(0.75 0.18 25);
+	--destructive: oklch(0.65 0.22 25);
+	--border: oklch(0.55 0.18 25 / 25%);
+	--input: oklch(0.55 0.18 25 / 30%);
+	--ring: oklch(0.6 0.2 25);
+	--display: oklch(0.1 0.03 25);
+	--display-foreground: oklch(0.68 0.22 25);
+	--meter-ok: oklch(0.6 0.2 25);
+	--meter-warn: oklch(0.6 0.2 25);
+	--meter-hot: oklch(0.7 0.24 25);
+}
+
+@theme inline {
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-card: var(--card);
+	--color-card-foreground: var(--card-foreground);
+	--color-popover: var(--popover);
+	--color-popover-foreground: var(--popover-foreground);
+	--color-primary: var(--primary);
+	--color-primary-foreground: var(--primary-foreground);
+	--color-secondary: var(--secondary);
+	--color-secondary-foreground: var(--secondary-foreground);
+	--color-muted: var(--muted);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-accent: var(--accent);
+	--color-accent-foreground: var(--accent-foreground);
+	--color-destructive: var(--destructive);
+	--color-border: var(--border);
+	--color-input: var(--input);
+	--color-ring: var(--ring);
+	--color-display: var(--display);
+	--color-display-foreground: var(--display-foreground);
+	--color-meter-ok: var(--meter-ok);
+	--color-meter-warn: var(--meter-warn);
+	--color-meter-hot: var(--meter-hot);
+	--color-tx: var(--tx);
+	--radius-sm: calc(var(--radius) - 4px);
+	--radius-md: calc(var(--radius) - 2px);
+	--radius-lg: var(--radius);
+	--radius-xl: calc(var(--radius) + 4px);
+	--font-mono: ui-monospace, "JetBrains Mono", "Cascadia Code", Menlo, Consolas, monospace;
+}
+
+@layer base {
+	* { @apply border-border outline-ring/50; }
+	html { color-scheme: light; }
+	html.dark, html.red { color-scheme: dark; }
+	body { @apply bg-background text-foreground antialiased; font-family: ui-sans-serif, system-ui, "Inter", "Segoe UI", sans-serif; }
+}
+
+/* Busy indicator: an antenna that fades in/out and cycles color while changes are applied. */
+@keyframes antenna-glow {
+	0%, 100% { opacity: 0.35; color: var(--primary); transform: scale(0.94); }
+	50% { opacity: 1; color: var(--display-foreground); transform: scale(1.06); }
+}
+.antenna-busy { animation: antenna-glow 1.1s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+	.antenna-busy { animation: none; opacity: 1; color: var(--primary); }
+}
+
+/* Touch screens: bigger targets (about 44px), roomier sliders, and no hover-only affordances. */
+@media (pointer: coarse) {
+	[data-slot='button']:not([class*='size-']):not([class*='h-6']) { min-height: 2.75rem; }
+	select, input:not([type='checkbox']) { min-height: 2.75rem; }
+	[data-slot='slider'] { min-height: 2.5rem; }
+	[data-slot='slider-thumb'] { width: 1.5rem; height: 1.5rem; }
+	[data-slot='switch'] { transform: scale(1.15); transform-origin: right center; }
+	input[type='checkbox'] { width: 1.25rem; height: 1.25rem; }
+}
+/* Respect users who ask for less motion. */
+@media (prefers-reduced-motion: reduce) {
+	* { scroll-behavior: auto !important; }
+}
+/* A control the search just jumped to. */
+@keyframes jump-flash { 0% { box-shadow: 0 0 0 3px var(--ring); } 100% { box-shadow: 0 0 0 3px transparent; } }
+.jump-flash { animation: jump-flash 1.6s ease-out; border-radius: var(--radius-md); }
+html { scroll-padding-top: 4.5rem; }

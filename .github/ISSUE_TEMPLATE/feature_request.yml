@@ -1,0 +1,38 @@
+name: Feature request
+description: Suggest an improvement or new capability
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What are you trying to do that is hard or impossible today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: What would you like rigctlWeb to do?
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: textarea
+    id: affected
+    attributes:
+      label: Radios and apps affected
+      description: Which radios or companion apps does this relate to, if any?
+  - type: dropdown
+    id: help
+    attributes:
+      label: Can you help?
+      options:
+        - I can test it on my radio
+        - I can help write it
+        - I can do both
+        - Not right now
+    validations:
+      required: true

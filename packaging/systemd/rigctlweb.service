@@ -1,0 +1,16 @@
+[Unit]
+Description=rigctlWeb radio control panel
+After=network-online.target
+
+[Service]
+ExecStart=%h/.local/bin/rigctlweb -listen 0.0.0.0:8480
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=%h/.config/rigctlweb
+PrivateTmp=yes
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,48 @@
+name: Integration request
+description: Ask for rigctlWeb to work with another ham radio application or modem
+labels: ["integration"]
+body:
+  - type: dropdown
+    id: app
+    attributes:
+      label: Application
+      options:
+        - pat
+        - fldigi
+        - wsjtx-improved
+        - direwolf
+        - xastir
+        - js8call
+        - mercury
+        - VARA
+        - ARDOP
+        - Other (describe below)
+    validations:
+      required: true
+  - type: input
+    id: app_version
+    attributes:
+      label: Application version
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Desired behavior
+      description: What should rigctlWeb do with this application? For example, show status, share the rig, set frequency or mode, or coordinate PTT.
+    validations:
+      required: true
+  - type: textarea
+    id: setup
+    attributes:
+      label: Current setup
+      description: How the application talks to the radio today (rigctld, serial, its own CAT).
+  - type: dropdown
+    id: help
+    attributes:
+      label: Can you help?
+      options:
+        - I can test it
+        - I can help write it
+        - I can do both
+        - Not right now
+    validations:
+      required: true

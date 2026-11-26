@@ -1,0 +1,101 @@
+{
+  "$comment": "Conformance vectors for Rigs checks and the raw-CAT allow-list. openRMS-Rigs runs these in its test suite against POST /check's logic and rigs/cat-allowlist.json; client implementations (rigctlWeb) should pass them too. Semantics: profile.md, 'Checks' and 'Raw CAT allow-list'.",
+  "version": "1.1.0",
+  "check": {
+    "$comment": "Each case: one profile step, the value a client read from the radio (null = couldn't read), the Hamlib step size used as tolerance (levels only; the 'get' range step from rigctl --dump-caps, 0 when the range is 0..0), and the expected status. Cases use RIG_MODEL_IC7300 (Hamlib 4.7.2) so tolerances match its catalog.",
+    "rig": "RIG_MODEL_IC7300",
+    "cases": [
+      { "name": "mode: exact name", "step": { "id": "m", "kind": "mode", "name": "MODE", "value": "PKTUSB" }, "current": "PKTUSB", "tolerance": 0, "status": "ok" },
+      { "name": "mode: case-insensitive", "step": { "id": "m", "kind": "mode", "name": "MODE", "value": "PKTUSB" }, "current": "pktusb", "tolerance": 0, "status": "ok" },
+      { "name": "mode: other mode", "step": { "id": "m", "kind": "mode", "name": "MODE", "value": "PKTUSB" }, "current": "USB", "tolerance": 0, "status": "drift" },
+      { "name": "mode: passband is not compared (send the mode name only)", "step": { "id": "m", "kind": "mode", "name": "MODE", "value": "PKTUSB", "passband_hz": 3000 }, "current": "PKTUSB", "tolerance": 0, "status": "ok" },
+      { "name": "mode: expect one_of replaces value", "step": { "id": "m", "kind": "mode", "name": "MODE", "value": "PKTUSB", "expect": { "one_of": ["USB", "PKTUSB"] } }, "current": "USB", "tolerance": 0, "status": "ok" },
+      { "name": "mode: expect one_of miss", "step": { "id": "m", "kind": "mode", "name": "MODE", "value": "PKTUSB", "expect": { "one_of": ["USB", "PKTUSB"] } }, "current": "LSB", "tolerance": 0, "status": "drift" },
+      { "name": "mode: check_only with expect not", "step": { "id": "m", "kind": "mode", "name": "MODE", "check_only": true, "expect": { "not": ["FM", "AM"] } }, "current": "USB", "tolerance": 0, "status": "ok" },
+      { "name": "mode: check_only hits not", "step": { "id": "m", "kind": "mode", "name": "MODE", "check_only": true, "expect": { "not": ["FM", "AM"] } }, "current": "fm", "tolerance": 0, "status": "drift" },
+
+      { "name": "level: within one step", "step": { "id": "p", "kind": "level", "name": "RFPOWER", "value": 0.5 }, "current": 0.503, "tolerance": 0.003922, "status": "ok" },
+      { "name": "level: more than one step", "step": { "id": "p", "kind": "level", "name": "RFPOWER", "value": 0.5 }, "current": 0.505, "tolerance": 0.003922, "status": "drift" },
+      { "name": "level: numeric string reading", "step": { "id": "p", "kind": "level", "name": "RFPOWER", "value": 0.5 }, "current": "0.5", "tolerance": 0.003922, "status": "ok" },
+      { "name": "level: integer step, boundary is inclusive", "step": { "id": "k", "kind": "level", "name": "KEYSPD", "value": 20 }, "current": 21, "tolerance": 1, "status": "ok" },
+      { "name": "level: integer step, two off", "step": { "id": "k", "kind": "level", "name": "KEYSPD", "value": 20 }, "current": 22, "tolerance": 1, "status": "drift" },
+      { "name": "level: step 0 means exact (1e-6)", "step": { "id": "a", "kind": "level", "name": "ATT", "value": 12 }, "current": 11.99, "tolerance": 0, "status": "drift" },
+      { "name": "level: expect min/max replaces value", "step": { "id": "n", "kind": "level", "name": "NR", "value": 0.4, "expect": { "min": 0.2, "max": 0.6 } }, "current": 0.6, "tolerance": 0.066667, "status": "ok" },
+      { "name": "level: expect max exceeded (no step tolerance on expect)", "step": { "id": "n", "kind": "level", "name": "NR", "value": 0.4, "expect": { "min": 0.2, "max": 0.6 } }, "current": 0.61, "tolerance": 0.066667, "status": "drift" },
+
+      { "name": "func: false read as 0", "step": { "id": "f", "kind": "func", "name": "NB", "value": false }, "current": 0, "tolerance": 0, "status": "ok" },
+      { "name": "func: false read as \"false\"", "step": { "id": "f", "kind": "func", "name": "NB", "value": false }, "current": "false", "tolerance": 0, "status": "ok" },
+      { "name": "func: on when it should be off", "step": { "id": "f", "kind": "func", "name": "NB", "value": false }, "current": "1", "tolerance": 0, "status": "drift" },
+      { "name": "func: true read as true", "step": { "id": "f", "kind": "func", "name": "ANF", "value": true }, "current": true, "tolerance": 0, "status": "ok" },
+
+      { "name": "cat: zero-padded reply equals the number", "step": { "id": "c", "kind": "cat", "name": "DATA OUT LEVEL", "value": 50, "cat": { "protocol": "ascii", "read": "EX010413;", "reply": "^EX010413(\\d{3});$", "set": "EX010413{value:03};" } }, "current": "050", "tolerance": 0, "status": "ok" },
+      { "name": "cat: different value", "step": { "id": "c", "kind": "cat", "name": "DATA OUT LEVEL", "value": 50, "cat": { "protocol": "ascii", "read": "EX010413;", "reply": "^EX010413(\\d{3});$", "set": "EX010413{value:03};" } }, "current": "051", "tolerance": 0, "status": "drift" },
+
+      { "name": "no reading is unknown", "step": { "id": "p", "kind": "level", "name": "RFPOWER", "value": 0.5 }, "current": null, "tolerance": 0.003922, "status": "unknown" },
+      { "name": "manual steps are always manual", "step": { "id": "u", "kind": "manual", "name": "USB MOD Level", "manual": { "menu": "MENU > SET > Connectors > USB MOD Level", "value": "50%" } }, "current": "anything", "tolerance": 0, "status": "manual" }
+    ]
+  },
+  "cat": {
+    "$comment": "Raw CAT commands as rendered (templates already filled), the use, and whether rigs/cat-allowlist.json allows them. safety is given for allowed set commands.",
+    "cases": [
+      { "protocol": "ascii", "use": "read", "command": "EX010413;", "allowed": true },
+      { "protocol": "ascii", "use": "set", "command": "EX010413050;", "allowed": true, "safety": "rx" },
+      { "protocol": "ascii", "use": "set", "command": "GT04;MD0C;", "allowed": true, "safety": "rx" },
+      { "protocol": "ascii", "use": "set", "command": "PC050;", "allowed": true, "safety": "tx" },
+      { "protocol": "ascii", "use": "read", "command": "SM0;", "allowed": true },
+      { "protocol": "ascii", "use": "set", "command": "SM0050;", "allowed": false, "why": "meter: read only" },
+      { "protocol": "ascii", "use": "set", "command": "TX1;", "allowed": false, "why": "transmit" },
+      { "protocol": "ascii", "use": "set", "command": "MX1;", "allowed": false, "why": "MOX" },
+      { "protocol": "ascii", "use": "set", "command": "AC002;", "allowed": false, "why": "tuner" },
+      { "protocol": "ascii", "use": "set", "command": "KYhello;", "allowed": false, "why": "sends CW" },
+      { "protocol": "ascii", "use": "set", "command": "GT04;TX1;", "allowed": false, "why": "a denied command after an allowed one" },
+      { "protocol": "ascii", "use": "set", "command": "MW0000;", "allowed": false, "why": "memory write" },
+      { "protocol": "ascii", "use": "set", "command": "FA00014074000;", "allowed": false, "why": "frequency goes through rigctld" },
+      { "protocol": "ascii", "use": "set", "command": "ZZTX1;", "allowed": false, "why": "Flex/Thetis" },
+      { "protocol": "ascii", "use": "set", "command": "EX0104 13;", "allowed": false, "why": "space" },
+      { "protocol": "ascii", "use": "set", "command": "EX010413050", "allowed": false, "why": "no terminator" },
+      { "protocol": "ascii", "use": "set", "command": "EX010413050;\nTX1;", "allowed": false, "why": "line break" },
+
+      { "protocol": "civ", "use": "set", "command": "1A050071", "allowed": true, "safety": "rx" },
+      { "protocol": "civ", "use": "read", "command": "1A0601", "allowed": true },
+      { "protocol": "civ", "use": "set", "command": "14020128", "allowed": true, "safety": "rx" },
+      { "protocol": "civ", "use": "set", "command": "140a0128", "allowed": true, "safety": "tx" },
+      { "protocol": "civ", "use": "set", "command": "164401", "allowed": true, "safety": "tx" },
+      { "protocol": "civ", "use": "read", "command": "04", "allowed": true },
+      { "protocol": "civ", "use": "set", "command": "0401", "allowed": false, "why": "04 only reads the mode; set with 06" },
+      { "protocol": "civ", "use": "set", "command": "1C0001", "allowed": false, "why": "transmit" },
+      { "protocol": "civ", "use": "set", "command": "164601", "allowed": false, "why": "VOX" },
+      { "protocol": "civ", "use": "set", "command": "164701", "allowed": false, "why": "break-in" },
+      { "protocol": "civ", "use": "set", "command": "1A0001", "allowed": false, "why": "memory write" },
+      { "protocol": "civ", "use": "set", "command": "17414243", "allowed": false, "why": "sends CW" },
+      { "protocol": "civ", "use": "set", "command": "2800", "allowed": false, "why": "voice message" },
+      { "protocol": "civ", "use": "set", "command": "0500", "allowed": false, "why": "frequency goes through rigctld" },
+      { "protocol": "civ", "use": "set", "command": "06 03", "allowed": false, "why": "space" },
+      { "protocol": "civ", "use": "set", "command": "FEFE94E01A050071FD", "allowed": false, "why": "framed: send the body only" }
+    ]
+  },
+  "steps": {
+    "$comment": "Step-level CAT rules (cat-allowlist.json step_rules): a step's read must be its set template without the placeholder, and its reply must be anchored to its read. valid: whether the step's cat object passes; field: the first field at fault.",
+    "cases": [
+      {"name": "valid: read, set and reply bound together", "cat": {"protocol": "ascii", "read": "EX010413;", "reply": "^EX010413(\\d{3});$", "set": "EX010413{value:03};"}, "valid": true},
+      {"name": "valid: read-only family without set", "cat": {"protocol": "ascii", "read": "SM0;", "reply": "^SM0(\\d{3});$"}, "valid": true},
+      {"name": "valid: CI-V menu item", "cat": {"protocol": "civ", "read": "1A050071", "reply": "^1A050071([0-9A-F]{2})$", "set": "1A050071{value:02}"}, "valid": true},
+      {"name": "set disguised as read: PC100; is a set of power", "cat": {"protocol": "ascii", "read": "PC100;", "reply": "^PC100(\\d{3});$", "set": "PC{value:03};"}, "valid": false, "field": "read"},
+      {"name": "set disguised as read: EX0104161; sets REAR SELECT", "cat": {"protocol": "ascii", "read": "EX0104161;", "reply": "^EX0104161(\\d);$", "set": "EX010416{value};"}, "valid": false, "field": "read"},
+      {"name": "set disguised as read with no set to bind it", "cat": {"protocol": "ascii", "read": "EX0104161;", "reply": "^EX0104161(\\d);$"}, "valid": false, "field": "read"},
+      {"name": "read of a settable family with no set", "cat": {"protocol": "ascii", "read": "PC;", "reply": "^PC(\\d{3});$"}, "valid": false, "field": "read"},
+      {"name": "read with two commands", "cat": {"protocol": "ascii", "read": "GT0;MD0;", "reply": "^GT0(\\d);$", "set": "GT0{value};"}, "valid": false, "field": "read"},
+      {"name": "CI-V set disguised as read", "cat": {"protocol": "civ", "read": "1A05007101", "reply": "^1A05007101([0-9A-F]{2})$", "set": "1A050071{value:02}"}, "valid": false, "field": "read"},
+      {"name": "set placeholder not at the end", "cat": {"protocol": "ascii", "read": "EX010416;", "reply": "^EX010416(\\d);$", "set": "EX0104{value}16;"}, "valid": false, "field": "set"},
+      {"name": "set without a placeholder", "cat": {"protocol": "ascii", "read": "EX0104161;", "reply": "^EX0104161(\\d);$", "set": "EX0104161;"}, "valid": false, "field": "set"},
+      {"name": "set with two commands", "cat": {"protocol": "ascii", "read": "MD0;", "reply": "^MD0(\\w);$", "set": "GT04;MD0{value};"}, "valid": false, "field": "set"},
+      {"name": "read without reply", "cat": {"protocol": "ascii", "read": "EX010413;", "set": "EX010413{value:03};"}, "valid": false, "field": "reply"},
+      {"name": "reply not anchored", "cat": {"protocol": "ascii", "read": "EX010413;", "reply": "EX010413(\\d{3});", "set": "EX010413{value:03};"}, "valid": false, "field": "reply"},
+      {"name": "reply for a different command", "cat": {"protocol": "ascii", "read": "EX010413;", "reply": "^EX010414(\\d);$", "set": "EX010413{value:03};"}, "valid": false, "field": "reply"},
+      {"name": "reply with two groups", "cat": {"protocol": "ascii", "read": "EX010413;", "reply": "^EX010413(\\d)(\\d\\d);$", "set": "EX010413{value:03};"}, "valid": false, "field": "reply"},
+      {"name": "reply without the terminator", "cat": {"protocol": "ascii", "read": "EX010413;", "reply": "^EX010413(\\d{3})$", "set": "EX010413{value:03};"}, "valid": false, "field": "reply"},
+      {"name": "CI-V reply with a ';'", "cat": {"protocol": "civ", "read": "1A050071", "reply": "^1A050071([0-9A-F]{2});$", "set": "1A050071{value:02}"}, "valid": false, "field": "reply"},
+      {"name": "reply without read", "cat": {"protocol": "ascii", "reply": "^EX010413(\\d{3});$", "set": "EX010413{value:03};"}, "valid": false, "field": "reply"}
+    ]
+  }
+}

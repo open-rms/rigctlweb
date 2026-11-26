@@ -1,0 +1,33 @@
+# Go
+*.exe
+*.test
+*.out
+coverage.*
+
+# Build output
+bin/
+/dist/
+
+# Frontend
+node_modules/
+.svelte-kit/
+.vite/
+# Keep the placeholder so go:embed compiles on a fresh clone
+web/dist/*
+!web/dist/.gitkeep
+
+# Local config and secrets
+.env
+.env.*
+!.env.example
+*.local
+config.toml
+!config.example.toml
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~

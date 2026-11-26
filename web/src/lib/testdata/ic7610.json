@@ -1,0 +1,1158 @@
+{
+ "model": "IC-7610",
+ "mfg": "Icom",
+ "hamlib": "Hamlib 4.7.2 2026-06-21T13:07:37Z SHA=40f63488f 64-bit",
+ "rigType": "Other Receiver Transmitter Transceiver",
+ "pttType": "None",
+ "modes": [
+  "AM",
+  "CW",
+  "USB",
+  "LSB",
+  "RTTY",
+  "FM",
+  "CWR",
+  "RTTYR",
+  "PKTLSB",
+  "PKTUSB",
+  "FM-D",
+  "AM-D",
+  "PSK",
+  "PSKR"
+ ],
+ "vfos": [
+  "Sub",
+  "Main",
+  "MEM"
+ ],
+ "vfoOps": [
+  "CPY",
+  "XCHG",
+  "FROM_VFO",
+  "TO_VFO",
+  "MCL",
+  "TUNE"
+ ],
+ "getFuncs": [
+  "NB",
+  "COMP",
+  "VOX",
+  "TONE",
+  "TSQL",
+  "SBKIN",
+  "FBKIN",
+  "ANF",
+  "NR",
+  "APF",
+  "MON",
+  "MN",
+  "LOCK",
+  "RIT",
+  "TUNER",
+  "XIT",
+  "DUAL_WATCH",
+  "TRANSCEIVE",
+  "SPECTRUM",
+  "SPECTRUM_HOLD",
+  "OVF_STATUS"
+ ],
+ "setFuncs": [
+  "NB",
+  "COMP",
+  "VOX",
+  "TONE",
+  "TSQL",
+  "SBKIN",
+  "FBKIN",
+  "ANF",
+  "NR",
+  "APF",
+  "MON",
+  "MN",
+  "LOCK",
+  "RIT",
+  "TUNER",
+  "XIT",
+  "DUAL_WATCH",
+  "TRANSCEIVE",
+  "SPECTRUM",
+  "SPECTRUM_HOLD",
+  "OVF_STATUS"
+ ],
+ "levels": [
+  {
+   "name": "PREAMP",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "ATT",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "VOXDELAY",
+   "min": 0,
+   "max": 20,
+   "step": 1,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "AF",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "RF",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "SQL",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "NR",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "PBT_IN",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "PBT_OUT",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "CWPITCH",
+   "min": 300,
+   "max": 900,
+   "step": 1,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "RFPOWER",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "MICGAIN",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "KEYSPD",
+   "min": 6,
+   "max": 48,
+   "step": 1,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "COMP",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "AGC",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "BKINDL",
+   "min": 0,
+   "max": 30,
+   "step": 1,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "BAL",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "VOXGAIN",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "ANTIVOX",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "RAWSTR",
+   "min": 0,
+   "max": 255,
+   "step": 0,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "SWR",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "ALC",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "STRENGTH",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "RFPOWER_METER",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "COMP_METER",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "VD_METER",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "ID_METER",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "NOTCHF_RAW",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "MONITOR_GAIN",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "NB",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "RFPOWER_METER_WATTS",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "SPECTRUM_MODE",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "SPECTRUM_SPAN",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "SPECTRUM_EDGE_LOW",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "SPECTRUM_EDGE_HIGH",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "SPECTRUM_SPEED",
+   "min": 0,
+   "max": 2,
+   "step": 1,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "SPECTRUM_REF",
+   "min": -30,
+   "max": 10,
+   "step": 0.5,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "SPECTRUM_AVG",
+   "min": 0,
+   "max": 3,
+   "step": 1,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "AGC_TIME",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": true
+  }
+ ],
+ "getParms": [
+  "ANN",
+  "BACKLIGHT",
+  "BEEP",
+  "TIME"
+ ],
+ "setParms": [
+  "ANN",
+  "BACKLIGHT",
+  "BEEP",
+  "TIME"
+ ],
+ "preamps": [
+  12,
+  20
+ ],
+ "attenuators": [
+  6,
+  12,
+  18
+ ],
+ "agcLevels": [
+  {
+   "value": 2,
+   "name": "FAST"
+  },
+  {
+   "value": 5,
+   "name": "MEDIUM"
+  },
+  {
+   "value": 3,
+   "name": "SLOW"
+  }
+ ],
+ "maxRit": 9999,
+ "maxXit": 9999,
+ "canSplit": true,
+ "canPtt": true,
+ "hasMemory": true,
+ "targetableVfo": true,
+ "can": {
+  "Reset": false,
+  "Scan": true,
+  "ctl Mem/VFO": true,
+  "decode Events": true,
+  "get Ant": true,
+  "get CTCSS": true,
+  "get CTCSS Squelch": true,
+  "get Channel": true,
+  "get Conf": true,
+  "get DCD": true,
+  "get DCS": false,
+  "get DCS Squelch": false,
+  "get Frequency": true,
+  "get Func": true,
+  "get Info": false,
+  "get Level": true,
+  "get Mem": false,
+  "get Mode": true,
+  "get PTT": true,
+  "get Param": true,
+  "get Power Stat": true,
+  "get RIT": true,
+  "get Repeater Duplex": false,
+  "get Repeater Offset": false,
+  "get Split Freq": true,
+  "get Split Mode": true,
+  "get Split VFO": true,
+  "get Transceive": false,
+  "get Tuning Step": true,
+  "get VFO": true,
+  "get XIT": true,
+  "recv DTMF": false,
+  "send DTMF": false,
+  "send Morse": true,
+  "send Voice": true,
+  "set Ant": true,
+  "set Bank": false,
+  "set CTCSS": true,
+  "set CTCSS Squelch": true,
+  "set Channel": true,
+  "set Conf": true,
+  "set DCS": false,
+  "set DCS Squelch": false,
+  "set Frequency": true,
+  "set Func": true,
+  "set Level": true,
+  "set Mem": true,
+  "set Mode": true,
+  "set PTT": true,
+  "set Param": true,
+  "set Power Stat": true,
+  "set RIT": true,
+  "set Repeater Duplex": false,
+  "set Repeater Offset": false,
+  "set Split Freq": true,
+  "set Split Mode": true,
+  "set Split VFO": true,
+  "set Transceive": true,
+  "set Tuning Step": true,
+  "set VFO": true,
+  "set XIT": true,
+  "stop Morse": true,
+  "wait Morse": true
+ },
+ "extLevels": [
+  {
+   "name": "digi_sel_level",
+   "type": "NUMERIC",
+   "label": "DIGI-SEL level",
+   "range": {
+    "min": 0,
+    "max": 255,
+    "step": 1
+   }
+  },
+  {
+   "name": "drive_gain",
+   "type": "NUMERIC",
+   "label": "Drive gain",
+   "range": {
+    "min": 0,
+    "max": 255,
+    "step": 1
+   }
+  },
+  {
+   "name": "SPECTRUM_SELECT",
+   "type": "COMBO",
+   "label": "Spectrum Scope Main/Sub",
+   "values": [
+    {
+     "value": 0,
+     "name": "Main"
+    },
+    {
+     "value": 1,
+     "name": "Sub"
+    }
+   ]
+  },
+  {
+   "name": "SPECTRUM_DUAL",
+   "type": "COMBO",
+   "label": "Spectrum Scope Single/Dual",
+   "values": [
+    {
+     "value": 0,
+     "name": "Single"
+    },
+    {
+     "value": 1,
+     "name": "Dual"
+    }
+   ]
+  },
+  {
+   "name": "SPECTRUM_EDGE",
+   "type": "COMBO",
+   "label": "Spectrum Scope Edge",
+   "tooltip": "Edge selection for fixed scope mode",
+   "values": [
+    {
+     "value": 0,
+     "name": "1"
+    },
+    {
+     "value": 1,
+     "name": "2"
+    },
+    {
+     "value": 2,
+     "name": "3"
+    },
+    {
+     "value": 3,
+     "name": "4"
+    }
+   ]
+  },
+  {
+   "name": "SPECTRUM_TX",
+   "type": "CHECKBUTTON",
+   "label": "Spectrum Scope TX operation"
+  },
+  {
+   "name": "SPECTRUM_CENTER",
+   "type": "COMBO",
+   "label": "Spectrum Scope Center Frequency Type",
+   "values": [
+    {
+     "value": 0,
+     "name": "Filter center"
+    },
+    {
+     "value": 1,
+     "name": "Carrier point center"
+    },
+    {
+     "value": 2,
+     "name": "Carrier point center (Abs. Freq.)"
+    }
+   ]
+  },
+  {
+   "name": "SPECTRUM_VBW",
+   "type": "COMBO",
+   "label": "Spectrum Scope VBW",
+   "tooltip": "Video Band Width",
+   "values": [
+    {
+     "value": 0,
+     "name": "Narrow"
+    },
+    {
+     "value": 1,
+     "name": "Wide"
+    }
+   ]
+  },
+  {
+   "name": "SPECTRUM_RBW",
+   "type": "COMBO",
+   "label": "Spectrum Scope RBW",
+   "tooltip": "Resolution Band Width",
+   "values": [
+    {
+     "value": 0,
+     "name": "Wide"
+    },
+    {
+     "value": 1,
+     "name": "Mid"
+    },
+    {
+     "value": 2,
+     "name": "Narrow"
+    }
+   ]
+  }
+ ],
+ "extFuncs": [
+  {
+   "name": "digi_sel",
+   "type": "CHECKBUTTON",
+   "label": "DIGI-SEL enable"
+  },
+  {
+   "name": "IPP",
+   "type": "CHECKBUTTON",
+   "label": "IP Plus"
+  },
+  {
+   "name": "TX_INHIBIT",
+   "type": "CHECKBUTTON",
+   "label": "TX Inhibit"
+  },
+  {
+   "name": "DPP",
+   "type": "CHECKBUTTON",
+   "label": "Digital Pre Distortion-SEL enable"
+  },
+  {
+   "name": "ICPW2",
+   "type": "CHECKBUTTON",
+   "label": "Icom PW2 enable"
+  }
+ ],
+ "extParms": null,
+ "parms": [
+  {
+   "name": "ANN",
+   "get": true,
+   "set": true,
+   "range": {
+    "min": 0,
+    "max": 2,
+    "step": 1
+   }
+  },
+  {
+   "name": "BACKLIGHT",
+   "get": true,
+   "set": true,
+   "range": {
+    "min": 0,
+    "max": 1,
+    "step": 0.004
+   }
+  },
+  {
+   "name": "BEEP",
+   "get": true,
+   "set": true,
+   "range": {
+    "min": 0,
+    "max": 1,
+    "step": 1
+   }
+  },
+  {
+   "name": "TIME",
+   "get": true,
+   "set": true,
+   "range": {
+    "min": 0,
+    "max": 86399,
+    "step": 1
+   }
+  }
+ ],
+ "tuningSteps": [
+  {
+   "hz": 1,
+   "modes": [
+    "AM",
+    "CW",
+    "USB",
+    "LSB",
+    "RTTY",
+    "FM",
+    "CWR",
+    "RTTYR",
+    "PKTLSB",
+    "PKTUSB",
+    "FM-D",
+    "AM-D",
+    "PSK",
+    "PSKR"
+   ]
+  },
+  {
+   "hz": 100,
+   "modes": [
+    "AM",
+    "CW",
+    "USB",
+    "LSB",
+    "RTTY",
+    "FM",
+    "CWR",
+    "RTTYR",
+    "PKTLSB",
+    "PKTUSB",
+    "FM-D",
+    "AM-D",
+    "PSK",
+    "PSKR"
+   ]
+  },
+  {
+   "hz": 1000,
+   "modes": [
+    "AM",
+    "CW",
+    "USB",
+    "LSB",
+    "RTTY",
+    "FM",
+    "CWR",
+    "RTTYR",
+    "PKTLSB",
+    "PKTUSB",
+    "FM-D",
+    "AM-D",
+    "PSK",
+    "PSKR"
+   ]
+  },
+  {
+   "hz": 5000,
+   "modes": [
+    "AM",
+    "CW",
+    "USB",
+    "LSB",
+    "RTTY",
+    "FM",
+    "CWR",
+    "RTTYR",
+    "PKTLSB",
+    "PKTUSB",
+    "FM-D",
+    "AM-D",
+    "PSK",
+    "PSKR"
+   ]
+  },
+  {
+   "hz": 9000,
+   "modes": [
+    "AM",
+    "CW",
+    "USB",
+    "LSB",
+    "RTTY",
+    "FM",
+    "CWR",
+    "RTTYR",
+    "PKTLSB",
+    "PKTUSB",
+    "FM-D",
+    "AM-D",
+    "PSK",
+    "PSKR"
+   ]
+  },
+  {
+   "hz": 10000,
+   "modes": [
+    "AM",
+    "CW",
+    "USB",
+    "LSB",
+    "RTTY",
+    "FM",
+    "CWR",
+    "RTTYR",
+    "PKTLSB",
+    "PKTUSB",
+    "FM-D",
+    "AM-D",
+    "PSK",
+    "PSKR"
+   ]
+  },
+  {
+   "hz": 12500,
+   "modes": [
+    "AM",
+    "CW",
+    "USB",
+    "LSB",
+    "RTTY",
+    "FM",
+    "CWR",
+    "RTTYR",
+    "PKTLSB",
+    "PKTUSB",
+    "FM-D",
+    "AM-D",
+    "PSK",
+    "PSKR"
+   ]
+  },
+  {
+   "hz": 20000,
+   "modes": [
+    "AM",
+    "CW",
+    "USB",
+    "LSB",
+    "RTTY",
+    "FM",
+    "CWR",
+    "RTTYR",
+    "PKTLSB",
+    "PKTUSB",
+    "FM-D",
+    "AM-D",
+    "PSK",
+    "PSKR"
+   ]
+  },
+  {
+   "hz": 25000,
+   "modes": [
+    "AM",
+    "CW",
+    "USB",
+    "LSB",
+    "RTTY",
+    "FM",
+    "CWR",
+    "RTTYR",
+    "PKTLSB",
+    "PKTUSB",
+    "FM-D",
+    "AM-D",
+    "PSK",
+    "PSKR"
+   ]
+  }
+ ],
+ "filters": [
+  {
+   "hz": 2400,
+   "modes": [
+    "USB",
+    "LSB",
+    "PKTLSB",
+    "PKTUSB"
+   ]
+  },
+  {
+   "hz": 1800,
+   "modes": [
+    "USB",
+    "LSB",
+    "PKTLSB",
+    "PKTUSB"
+   ]
+  },
+  {
+   "hz": 3000,
+   "modes": [
+    "USB",
+    "LSB",
+    "PKTLSB",
+    "PKTUSB"
+   ]
+  },
+  {
+   "hz": 500,
+   "modes": [
+    "CW",
+    "RTTY",
+    "CWR",
+    "RTTYR",
+    "PSK",
+    "PSKR"
+   ]
+  },
+  {
+   "hz": 250,
+   "modes": [
+    "CW",
+    "RTTY",
+    "CWR",
+    "RTTYR",
+    "PSK",
+    "PSKR"
+   ]
+  },
+  {
+   "hz": 1200,
+   "modes": [
+    "CW",
+    "CWR",
+    "PSK",
+    "PSKR"
+   ]
+  },
+  {
+   "hz": 2400,
+   "modes": [
+    "RTTY",
+    "RTTYR"
+   ]
+  },
+  {
+   "hz": 6000,
+   "modes": [
+    "AM",
+    "AM-D"
+   ]
+  },
+  {
+   "hz": 3000,
+   "modes": [
+    "AM",
+    "AM-D"
+   ]
+  },
+  {
+   "hz": 9000,
+   "modes": [
+    "AM",
+    "AM-D"
+   ]
+  },
+  {
+   "hz": 10000,
+   "modes": [
+    "FM",
+    "FM-D"
+   ]
+  },
+  {
+   "hz": 7000,
+   "modes": [
+    "FM",
+    "FM-D"
+   ]
+  },
+  {
+   "hz": 15000,
+   "modes": [
+    "FM",
+    "FM-D"
+   ]
+  }
+ ],
+ "bandwidths": {
+  "AM": {
+   "normal": 6000,
+   "narrow": 3000,
+   "wide": 9000
+  },
+  "AM-D": {
+   "normal": 6000,
+   "narrow": 3000,
+   "wide": 9000
+  },
+  "CW": {
+   "normal": 500,
+   "narrow": 250,
+   "wide": 1200
+  },
+  "CWR": {
+   "normal": 500,
+   "narrow": 250,
+   "wide": 1200
+  },
+  "FM": {
+   "normal": 10000,
+   "narrow": 7000,
+   "wide": 15000
+  },
+  "FM-D": {
+   "normal": 10000,
+   "narrow": 7000,
+   "wide": 15000
+  },
+  "LSB": {
+   "normal": 2400,
+   "narrow": 1800,
+   "wide": 3000
+  },
+  "PKTLSB": {
+   "normal": 2400,
+   "narrow": 1800,
+   "wide": 3000
+  },
+  "PKTUSB": {
+   "normal": 2400,
+   "narrow": 1800,
+   "wide": 3000
+  },
+  "PSK": {
+   "normal": 500,
+   "narrow": 250,
+   "wide": 1200
+  },
+  "RTTY": {
+   "normal": 500,
+   "narrow": 250,
+   "wide": 2400
+  },
+  "RTTYR": {
+   "normal": 500,
+   "narrow": 250,
+   "wide": 2400
+  },
+  "USB": {
+   "normal": 2400,
+   "narrow": 1800,
+   "wide": 3000
+  }
+ },
+ "memories": [
+  {
+   "start": 1,
+   "end": 99,
+   "type": "MEM",
+   "caps": []
+  },
+  {
+   "start": 100,
+   "end": 101,
+   "type": "EDGE",
+   "caps": []
+  },
+  {
+   "start": 1,
+   "end": 8,
+   "type": "VOICE",
+   "caps": []
+  },
+  {
+   "start": 1,
+   "end": 8,
+   "type": "MORSE",
+   "caps": []
+  }
+ ],
+ "scanOps": [
+  "MEM",
+  "PRIO",
+  "PROG",
+  "DELTA",
+  "VFO"
+ ],
+ "ctcss": [
+  670,
+  693,
+  719,
+  744,
+  770,
+  797,
+  825,
+  854,
+  885,
+  915,
+  948,
+  974,
+  1000,
+  1035,
+  1072,
+  1109,
+  1148,
+  1188,
+  1230,
+  1273,
+  1318,
+  1365,
+  1413,
+  1462,
+  1514,
+  1567,
+  1598,
+  1622,
+  1655,
+  1679,
+  1713,
+  1738,
+  1773,
+  1799,
+  1835,
+  1862,
+  1899,
+  1928,
+  1966,
+  1995,
+  2035,
+  2065,
+  2107,
+  2181,
+  2257,
+  2291,
+  2336,
+  2418,
+  2503,
+  2541
+ ],
+ "dcs": null
+}

@@ -1,0 +1,1312 @@
+{
+ "model": "Dummy",
+ "mfg": "Hamlib",
+ "hamlib": "Hamlib 4.7.2 2026-06-21T13:07:37Z SHA=40f63488f 64-bit",
+ "rigType": "Other",
+ "pttType": "None",
+ "modes": [
+  "AM",
+  "CW",
+  "USB",
+  "LSB",
+  "RTTY",
+  "FM",
+  "WFM",
+  "CWR",
+  "RTTYR"
+ ],
+ "vfos": [
+  "VFOA",
+  "VFOB",
+  "VFOC",
+  "SubA",
+  "SubB",
+  "MainA",
+  "MainB",
+  "Sub",
+  "Main",
+  "MEM"
+ ],
+ "vfoOps": [
+  "CPY",
+  "XCHG",
+  "FROM_VFO",
+  "TO_VFO",
+  "MCL",
+  "UP",
+  "DOWN",
+  "BAND_UP",
+  "BAND_DOWN",
+  "LEFT",
+  "RIGHT",
+  "TUNE",
+  "TOGGLE"
+ ],
+ "getFuncs": [
+  "FAGC",
+  "NB",
+  "COMP",
+  "VOX",
+  "TONE",
+  "TSQL",
+  "SBKIN",
+  "FBKIN",
+  "ANF",
+  "NR",
+  "AIP",
+  "APF",
+  "MON",
+  "MN",
+  "RF",
+  "ARO",
+  "LOCK",
+  "MUTE",
+  "VSC",
+  "REV",
+  "SQL",
+  "ABM",
+  "BC",
+  "MBC",
+  "RIT",
+  "AFC",
+  "SATMODE",
+  "SCOPE",
+  "RESUME",
+  "TBURST",
+  "TUNER",
+  "XIT",
+  "NB2",
+  "CSQL",
+  "AFLT",
+  "ANL",
+  "BC2",
+  "DUAL_WATCH",
+  "DIVERSITY",
+  "DSQL",
+  "SCEN",
+  "SLICE",
+  "TRANSCEIVE",
+  "SPECTRUM",
+  "SPECTRUM_HOLD",
+  "SEND_MORSE",
+  "SEND_VOICE_MEM",
+  "OVF_STATUS",
+  "SYNC"
+ ],
+ "setFuncs": [
+  "FAGC",
+  "NB",
+  "COMP",
+  "VOX",
+  "TONE",
+  "TSQL",
+  "SBKIN",
+  "FBKIN",
+  "ANF",
+  "NR",
+  "AIP",
+  "APF",
+  "MON",
+  "MN",
+  "RF",
+  "ARO",
+  "LOCK",
+  "MUTE",
+  "VSC",
+  "REV",
+  "SQL",
+  "ABM",
+  "BC",
+  "MBC",
+  "RIT",
+  "AFC",
+  "SATMODE",
+  "SCOPE",
+  "RESUME",
+  "TBURST",
+  "TUNER",
+  "XIT",
+  "NB2",
+  "CSQL",
+  "AFLT",
+  "ANL",
+  "BC2",
+  "DUAL_WATCH",
+  "DIVERSITY",
+  "DSQL",
+  "SCEN",
+  "SLICE",
+  "TRANSCEIVE",
+  "SPECTRUM",
+  "SPECTRUM_HOLD",
+  "SEND_MORSE",
+  "SEND_VOICE_MEM",
+  "OVF_STATUS",
+  "SYNC"
+ ],
+ "levels": [
+  {
+   "name": "PREAMP",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "ATT",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "VOXDELAY",
+   "min": 0,
+   "max": 20,
+   "step": 1,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "AF",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "RF",
+   "min": 0,
+   "max": 1,
+   "step": 0.003922,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "SQL",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "IF",
+   "min": -1500,
+   "max": 1500,
+   "step": 50,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "APF",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "NR",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "PBT_IN",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "PBT_OUT",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "CWPITCH",
+   "min": 300,
+   "max": 1000,
+   "step": 10,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "RFPOWER",
+   "min": 0.05,
+   "max": 1,
+   "step": 0.001957,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "MICGAIN",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "KEYSPD",
+   "min": 5,
+   "max": 60,
+   "step": 1,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "NOTCHF",
+   "min": 0,
+   "max": 4000,
+   "step": 10,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "COMP",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "AGC",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "BKINDL",
+   "min": 0,
+   "max": 30,
+   "step": 1,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "BAL",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "METER",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "VOXGAIN",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "ANTIVOX",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "SLOPE_LOW",
+   "min": 0,
+   "max": 20,
+   "step": 1,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "SLOPE_HIGH",
+   "min": 0,
+   "max": 20,
+   "step": 1,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "BKIN_DLYMS",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "RAWSTR",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "SWR",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "ALC",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "STRENGTH",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "RFPOWER_METER",
+   "min": 0,
+   "max": 1,
+   "step": 0.003922,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "COMP_METER",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "VD_METER",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "ID_METER",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "NOTCHF_RAW",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "MONITOR_GAIN",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "NB",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "RFPOWER_METER_WATTS",
+   "min": 0,
+   "max": 100,
+   "step": 0.003922,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "SPECTRUM_MODE",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "SPECTRUM_SPAN",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "SPECTRUM_EDGE_LOW",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "SPECTRUM_EDGE_HIGH",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "SPECTRUM_SPEED",
+   "min": 0,
+   "max": 2,
+   "step": 1,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "SPECTRUM_REF",
+   "min": -30,
+   "max": 10,
+   "step": 0.5,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "SPECTRUM_AVG",
+   "min": 0,
+   "max": 3,
+   "step": 1,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "SPECTRUM_ATT",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "TEMP_METER",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "BAND_SELECT",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "USB_AF",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true,
+   "assumed": true
+  },
+  {
+   "name": "USB_AF_INPUT",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "AGC_TIME",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": true
+  }
+ ],
+ "getParms": [
+  "ANN",
+  "APO",
+  "BACKLIGHT",
+  "BEEP",
+  "TIME",
+  "BAT",
+  "KEYLIGHT",
+  "SCREENSAVER",
+  "AFIF",
+  "BANDSELECT",
+  "KEYERTYPE",
+  "AFIF_LAN",
+  "AFIF_WLAN",
+  "AFIF_ACC"
+ ],
+ "setParms": [
+  "ANN",
+  "APO",
+  "BACKLIGHT",
+  "BEEP",
+  "TIME",
+  "KEYLIGHT",
+  "SCREENSAVER",
+  "AFIF",
+  "BANDSELECT",
+  "KEYERTYPE",
+  "AFIF_LAN",
+  "AFIF_WLAN",
+  "AFIF_ACC"
+ ],
+ "preamps": [
+  10
+ ],
+ "attenuators": [
+  10,
+  20,
+  30
+ ],
+ "agcLevels": [
+  {
+   "value": 0,
+   "name": "OFF"
+  },
+  {
+   "value": 1,
+   "name": "SUPERFAST"
+  },
+  {
+   "value": 2,
+   "name": "FAST"
+  },
+  {
+   "value": 5,
+   "name": "MEDIUM"
+  },
+  {
+   "value": 3,
+   "name": "SLOW"
+  },
+  {
+   "value": 6,
+   "name": "AUTO"
+  },
+  {
+   "value": 4,
+   "name": "USER"
+  }
+ ],
+ "maxRit": 9990,
+ "maxXit": 9990,
+ "canSplit": true,
+ "canPtt": true,
+ "hasMemory": true,
+ "targetableVfo": true,
+ "can": {
+  "Reset": false,
+  "Scan": true,
+  "ctl Mem/VFO": true,
+  "decode Events": false,
+  "get Ant": true,
+  "get CTCSS": true,
+  "get CTCSS Squelch": true,
+  "get Channel": true,
+  "get Conf": true,
+  "get DCD": true,
+  "get DCS": true,
+  "get DCS Squelch": true,
+  "get Frequency": true,
+  "get Func": true,
+  "get Info": true,
+  "get Level": true,
+  "get Mem": true,
+  "get Mode": true,
+  "get PTT": true,
+  "get Param": true,
+  "get Power Stat": true,
+  "get RIT": true,
+  "get Repeater Duplex": true,
+  "get Repeater Offset": true,
+  "get Split Freq": true,
+  "get Split Mode": true,
+  "get Split VFO": true,
+  "get Transceive": true,
+  "get Tuning Step": true,
+  "get VFO": true,
+  "get XIT": true,
+  "recv DTMF": true,
+  "send DTMF": true,
+  "send Morse": true,
+  "send Voice": true,
+  "set Ant": true,
+  "set Bank": true,
+  "set CTCSS": true,
+  "set CTCSS Squelch": true,
+  "set Channel": true,
+  "set Conf": true,
+  "set DCS": true,
+  "set DCS Squelch": true,
+  "set Frequency": true,
+  "set Func": true,
+  "set Level": true,
+  "set Mem": true,
+  "set Mode": true,
+  "set PTT": true,
+  "set Param": true,
+  "set Power Stat": true,
+  "set RIT": true,
+  "set Repeater Duplex": true,
+  "set Repeater Offset": true,
+  "set Split Freq": true,
+  "set Split Mode": true,
+  "set Split VFO": true,
+  "set Transceive": true,
+  "set Tuning Step": true,
+  "set VFO": true,
+  "set XIT": true,
+  "stop Morse": true,
+  "wait Morse": false
+ },
+ "extLevels": [
+  {
+   "name": "MGL",
+   "type": "NUMERIC",
+   "label": "Magic level",
+   "tooltip": "Magic level, as an example",
+   "range": {
+    "min": 0,
+    "max": 1,
+    "step": 0.001
+   }
+  },
+  {
+   "name": "MGF",
+   "type": "CHECKBUTTON",
+   "label": "Magic func",
+   "tooltip": "Magic function, as an example"
+  },
+  {
+   "name": "MGO",
+   "type": "BUTTON",
+   "label": "Magic Op",
+   "tooltip": "Magic Op, as an example"
+  },
+  {
+   "name": "MGC",
+   "type": "COMBO",
+   "label": "Magic combo",
+   "tooltip": "Magic combo, as an example",
+   "values": [
+    {
+     "value": 0,
+     "name": "VALUE1"
+    },
+    {
+     "value": 1,
+     "name": "VALUE2"
+    },
+    {
+     "value": 2,
+     "name": "NONE"
+    }
+   ]
+  }
+ ],
+ "extFuncs": [
+  {
+   "name": "MGEF",
+   "type": "CHECKBUTTON",
+   "label": "Magic ext func",
+   "tooltip": "Magic ext function, as an example"
+  }
+ ],
+ "extParms": [
+  {
+   "name": "MGP",
+   "type": "NUMERIC",
+   "label": "Magic parm",
+   "tooltip": "Magic parameter, as an example",
+   "range": {
+    "min": 0,
+    "max": 1,
+    "step": 0.001
+   }
+  }
+ ],
+ "parms": [
+  {
+   "name": "ANN",
+   "get": true,
+   "set": true,
+   "range": {
+    "min": 0,
+    "max": 0,
+    "step": 0
+   }
+  },
+  {
+   "name": "APO",
+   "get": true,
+   "set": true,
+   "range": {
+    "min": 0,
+    "max": 0,
+    "step": 0
+   }
+  },
+  {
+   "name": "BACKLIGHT",
+   "get": true,
+   "set": true,
+   "range": {
+    "min": 0,
+    "max": 1,
+    "step": 0.004
+   }
+  },
+  {
+   "name": "BEEP",
+   "get": true,
+   "set": true,
+   "range": {
+    "min": 0,
+    "max": 1,
+    "step": 0
+   }
+  },
+  {
+   "name": "TIME",
+   "get": true,
+   "set": true,
+   "range": {
+    "min": 0,
+    "max": 0,
+    "step": 0
+   }
+  },
+  {
+   "name": "BAT",
+   "get": true,
+   "set": false,
+   "range": {
+    "min": 0,
+    "max": 0,
+    "step": 0
+   }
+  },
+  {
+   "name": "KEYLIGHT",
+   "get": true,
+   "set": true,
+   "range": {
+    "min": 0,
+    "max": 0,
+    "step": 0
+   }
+  },
+  {
+   "name": "SCREENSAVER",
+   "get": true,
+   "set": true,
+   "range": {
+    "min": 0,
+    "max": 3,
+    "step": 1
+   }
+  },
+  {
+   "name": "AFIF",
+   "get": true,
+   "set": true,
+   "range": {
+    "min": 0,
+    "max": 0,
+    "step": 0
+   }
+  },
+  {
+   "name": "BANDSELECT",
+   "get": true,
+   "set": true,
+   "range": {
+    "min": 0,
+    "max": 0,
+    "step": 0
+   },
+   "options": [
+    "BANDUNUSED",
+    "BAND70CM",
+    "BAND33CM",
+    "BAND23CM"
+   ]
+  },
+  {
+   "name": "KEYERTYPE",
+   "get": true,
+   "set": true,
+   "range": {
+    "min": 0,
+    "max": 0,
+    "step": 0
+   },
+   "options": [
+    "STRAIGHT",
+    "BUG",
+    "PADDLE"
+   ]
+  },
+  {
+   "name": "AFIF_LAN",
+   "get": true,
+   "set": true,
+   "range": {
+    "min": 0,
+    "max": 0,
+    "step": 0
+   }
+  },
+  {
+   "name": "AFIF_WLAN",
+   "get": true,
+   "set": true,
+   "range": {
+    "min": 0,
+    "max": 0,
+    "step": 0
+   }
+  },
+  {
+   "name": "AFIF_ACC",
+   "get": true,
+   "set": true,
+   "range": {
+    "min": 0,
+    "max": 0,
+    "step": 0
+   }
+  }
+ ],
+ "tuningSteps": [
+  {
+   "hz": 1,
+   "modes": [
+    "AM",
+    "CW",
+    "USB",
+    "LSB",
+    "RTTY",
+    "FM",
+    "WFM",
+    "CWR",
+    "RTTYR"
+   ]
+  }
+ ],
+ "filters": [
+  {
+   "hz": 2400,
+   "modes": [
+    "USB",
+    "LSB"
+   ]
+  },
+  {
+   "hz": 1800,
+   "modes": [
+    "USB",
+    "LSB"
+   ]
+  },
+  {
+   "hz": 3000,
+   "modes": [
+    "USB",
+    "LSB"
+   ]
+  },
+  {
+   "hz": 500,
+   "modes": [
+    "CW"
+   ]
+  },
+  {
+   "hz": 2400,
+   "modes": [
+    "CW"
+   ]
+  },
+  {
+   "hz": 50,
+   "modes": [
+    "CW"
+   ]
+  },
+  {
+   "hz": 300,
+   "modes": [
+    "RTTY"
+   ]
+  },
+  {
+   "hz": 2400,
+   "modes": [
+    "RTTY"
+   ]
+  },
+  {
+   "hz": 50,
+   "modes": [
+    "RTTY"
+   ]
+  },
+  {
+   "hz": 8000,
+   "modes": [
+    "AM"
+   ]
+  },
+  {
+   "hz": 2400,
+   "modes": [
+    "AM"
+   ]
+  },
+  {
+   "hz": 10000,
+   "modes": [
+    "AM"
+   ]
+  },
+  {
+   "hz": 15000,
+   "modes": [
+    "FM"
+   ]
+  },
+  {
+   "hz": 8000,
+   "modes": [
+    "FM"
+   ]
+  },
+  {
+   "hz": 230000,
+   "modes": [
+    "WFM"
+   ]
+  }
+ ],
+ "bandwidths": {
+  "AM": {
+   "normal": 8000,
+   "narrow": 2400,
+   "wide": 10000
+  },
+  "CW": {
+   "normal": 500,
+   "narrow": 50,
+   "wide": 2400
+  },
+  "CWR": {
+   "normal": 500,
+   "narrow": 0,
+   "wide": 0
+  },
+  "FM": {
+   "normal": 15000,
+   "narrow": 8000,
+   "wide": 0
+  },
+  "LSB": {
+   "normal": 2400,
+   "narrow": 1800,
+   "wide": 3000
+  },
+  "RTTY": {
+   "normal": 300,
+   "narrow": 50,
+   "wide": 2400
+  },
+  "RTTYR": {
+   "normal": 300,
+   "narrow": 0,
+   "wide": 0
+  },
+  "USB": {
+   "normal": 2400,
+   "narrow": 1800,
+   "wide": 3000
+  },
+  "WFM": {
+   "normal": 230000,
+   "narrow": 0,
+   "wide": 0
+  }
+ },
+ "memories": [
+  {
+   "start": 0,
+   "end": 18,
+   "type": "MEM",
+   "caps": [
+    "BANK",
+    "ANT",
+    "FREQ",
+    "MODE",
+    "WIDTH",
+    "SPLIT",
+    "TXFREQ",
+    "TXMODE",
+    "TXWIDTH",
+    "SPLIT",
+    "RPTRSHIFT",
+    "RPTROFS",
+    "TS",
+    "RIT",
+    "XIT",
+    "FUNC",
+    "LEVEL",
+    "TONE",
+    "CTCSS",
+    "DCSCODE",
+    "DCSSQL",
+    "SCANGRP",
+    "FLAG",
+    "NAME",
+    "EXTLVL"
+   ]
+  },
+  {
+   "start": 19,
+   "end": 19,
+   "type": "CALL",
+   "caps": []
+  },
+  {
+   "start": 20,
+   "end": 21,
+   "type": "EDGE",
+   "caps": []
+  }
+ ],
+ "scanOps": [
+  "MEM",
+  "SLCT",
+  "PRIO",
+  "PROG",
+  "DELTA",
+  "VFO",
+  "PLT",
+  "STOP"
+ ],
+ "ctcss": [
+  670,
+  693,
+  719,
+  744,
+  770,
+  797,
+  825,
+  854,
+  885,
+  915,
+  948,
+  974,
+  1000,
+  1035,
+  1072,
+  1109,
+  1148,
+  1188,
+  1230,
+  1273,
+  1318,
+  1365,
+  1413,
+  1462,
+  1514,
+  1567,
+  1598,
+  1622,
+  1655,
+  1679,
+  1713,
+  1738,
+  1773,
+  1799,
+  1835,
+  1862,
+  1899,
+  1928,
+  1966,
+  1995,
+  2035,
+  2065,
+  2107,
+  2181,
+  2257,
+  2291,
+  2336,
+  2418,
+  2503,
+  2541
+ ],
+ "dcs": [
+  17,
+  23,
+  25,
+  26,
+  31,
+  32,
+  36,
+  43,
+  47,
+  50,
+  51,
+  53,
+  54,
+  65,
+  71,
+  72,
+  73,
+  74,
+  114,
+  115,
+  116,
+  122,
+  125,
+  131,
+  132,
+  134,
+  143,
+  145,
+  152,
+  155,
+  156,
+  162,
+  165,
+  172,
+  174,
+  205,
+  212,
+  223,
+  225,
+  226,
+  243,
+  244,
+  245,
+  246,
+  251,
+  252,
+  255,
+  261,
+  263,
+  265,
+  266,
+  271,
+  274,
+  306,
+  311,
+  315,
+  325,
+  331,
+  332,
+  343,
+  346,
+  351,
+  356,
+  364,
+  365,
+  371,
+  411,
+  412,
+  413,
+  423,
+  431,
+  432,
+  445,
+  446,
+  452,
+  454,
+  455,
+  462,
+  464,
+  465,
+  466,
+  503,
+  506,
+  516,
+  523,
+  526,
+  532,
+  546,
+  565,
+  606,
+  612,
+  624,
+  627,
+  631,
+  632,
+  654,
+  662,
+  664,
+  703,
+  712,
+  723,
+  731,
+  732,
+  734,
+  743,
+  754
+ ]
+}

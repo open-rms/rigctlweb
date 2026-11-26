@@ -1,0 +1,630 @@
+{
+ "model": "K3",
+ "mfg": "Elecraft",
+ "hamlib": "Hamlib 4.7.2 2026-06-21T13:07:37Z SHA=40f63488f 64-bit",
+ "rigType": "Other Receiver Transmitter Transceiver",
+ "pttType": "None",
+ "modes": [
+  "AM",
+  "CW",
+  "USB",
+  "LSB",
+  "RTTY",
+  "FM",
+  "CWR",
+  "RTTYR",
+  "PKTLSB",
+  "PKTUSB"
+ ],
+ "vfos": [
+  "VFOA",
+  "VFOB"
+ ],
+ "vfoOps": [
+  "UP",
+  "DOWN",
+  "TUNE"
+ ],
+ "getFuncs": [
+  "NB",
+  "VOX",
+  "APF",
+  "LOCK",
+  "RIT",
+  "XIT",
+  "DUAL_WATCH",
+  "DIVERSITY",
+  "SEND_MORSE"
+ ],
+ "setFuncs": [
+  "NB",
+  "VOX",
+  "APF",
+  "LOCK",
+  "RIT",
+  "XIT",
+  "DUAL_WATCH",
+  "DIVERSITY",
+  "SEND_MORSE"
+ ],
+ "levels": [
+  {
+   "name": "PREAMP",
+   "min": 0,
+   "max": 20,
+   "step": 10,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "ATT",
+   "min": 0,
+   "max": 10,
+   "step": 10,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "AF",
+   "min": 0,
+   "max": 1,
+   "step": 0.003922,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "RF",
+   "min": 0,
+   "max": 1,
+   "step": 0.003922,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "SQL",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "NR",
+   "min": 0,
+   "max": 1,
+   "step": 0.1,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "RFPOWER",
+   "min": 0.05,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "MICGAIN",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "KEYSPD",
+   "min": 8,
+   "max": 50,
+   "step": 1,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "COMP",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "AGC",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "RAWSTR",
+   "min": 0,
+   "max": 255,
+   "step": 0,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "SWR",
+   "min": 1,
+   "max": 99.900002,
+   "step": 0.1,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "ALC",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "STRENGTH",
+   "min": 0,
+   "max": 60,
+   "step": 0,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "RFPOWER_METER",
+   "min": 0,
+   "max": 1,
+   "step": 0.003922,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "MONITOR_GAIN",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "RFPOWER_METER_WATTS",
+   "min": 0,
+   "max": 100,
+   "step": 0.003922,
+   "get": true,
+   "set": false
+  }
+ ],
+ "getParms": null,
+ "setParms": null,
+ "preamps": [
+  1
+ ],
+ "attenuators": [
+  10
+ ],
+ "agcLevels": [
+  {
+   "value": 9,
+   "name": "NONE"
+  }
+ ],
+ "maxRit": 9990,
+ "maxXit": 9990,
+ "canSplit": true,
+ "canPtt": true,
+ "hasMemory": false,
+ "targetableVfo": true,
+ "can": {
+  "Reset": false,
+  "Scan": false,
+  "ctl Mem/VFO": true,
+  "decode Events": false,
+  "get Ant": true,
+  "get CTCSS": false,
+  "get CTCSS Squelch": false,
+  "get Channel": false,
+  "get Conf": false,
+  "get DCD": true,
+  "get DCS": false,
+  "get DCS Squelch": false,
+  "get Frequency": true,
+  "get Func": true,
+  "get Info": false,
+  "get Level": true,
+  "get Mem": false,
+  "get Mode": true,
+  "get PTT": true,
+  "get Param": false,
+  "get Power Stat": true,
+  "get RIT": true,
+  "get Repeater Duplex": false,
+  "get Repeater Offset": false,
+  "get Split Freq": true,
+  "get Split Mode": true,
+  "get Split VFO": true,
+  "get Transceive": true,
+  "get Tuning Step": false,
+  "get VFO": true,
+  "get XIT": true,
+  "recv DTMF": false,
+  "send DTMF": false,
+  "send Morse": true,
+  "send Voice": true,
+  "set Ant": true,
+  "set Bank": false,
+  "set CTCSS": false,
+  "set CTCSS Squelch": false,
+  "set Channel": false,
+  "set Conf": false,
+  "set DCS": false,
+  "set DCS Squelch": false,
+  "set Frequency": true,
+  "set Func": true,
+  "set Level": true,
+  "set Mem": false,
+  "set Mode": true,
+  "set PTT": true,
+  "set Param": false,
+  "set Power Stat": true,
+  "set RIT": true,
+  "set Repeater Duplex": false,
+  "set Repeater Offset": false,
+  "set Split Freq": true,
+  "set Split Mode": true,
+  "set Split VFO": true,
+  "set Transceive": true,
+  "set Tuning Step": false,
+  "set VFO": true,
+  "set XIT": true,
+  "stop Morse": true,
+  "wait Morse": true
+ },
+ "extLevels": [
+  {
+   "name": "ifctr",
+   "type": "NUMERIC",
+   "label": "IF freq",
+   "tooltip": "IF center frequency",
+   "range": {
+    "min": 0,
+    "max": 9990,
+    "step": 10
+   }
+  },
+  {
+   "name": "txst",
+   "type": "CHECKBUTTON",
+   "label": "TX status",
+   "tooltip": "TX status"
+  },
+  {
+   "name": "ritclr",
+   "type": "BUTTON",
+   "label": "RIT clear",
+   "tooltip": "RIT clear"
+  },
+  {
+   "name": "essb",
+   "type": "CHECKBUTTON",
+   "label": "ESSB",
+   "tooltip": "Extended SSB frequency response"
+  },
+  {
+   "name": "rx_ant",
+   "type": "CHECKBUTTON",
+   "label": "RX ANT",
+   "tooltip": "RX antenna"
+  },
+  {
+   "name": "link_vfos",
+   "type": "CHECKBUTTON",
+   "label": "Link VFOs",
+   "tooltip": "Link VFOs"
+  },
+  {
+   "name": "tx_meter",
+   "type": "COMBO",
+   "label": "TX meter",
+   "tooltip": "Transmit meter mode",
+   "values": [
+    {
+     "value": 0,
+     "name": "SWR"
+    },
+    {
+     "value": 1,
+     "name": "ALC"
+    }
+   ]
+  },
+  {
+   "name": "if_nb",
+   "type": "NUMERIC",
+   "label": "IF NB",
+   "tooltip": "IF noise blanker level",
+   "range": {
+    "min": 0,
+    "max": 21,
+    "step": 1
+   }
+  }
+ ],
+ "extFuncs": null,
+ "extParms": [
+  {
+   "name": "fine",
+   "type": "CHECKBUTTON",
+   "label": "Fine",
+   "tooltip": "Fine step mode"
+  },
+  {
+   "name": "voice",
+   "type": "BUTTON",
+   "label": "Voice",
+   "tooltip": "Voice recall"
+  },
+  {
+   "name": "xit",
+   "type": "CHECKBUTTON",
+   "label": "XIT",
+   "tooltip": "XIT"
+  },
+  {
+   "name": "rit",
+   "type": "CHECKBUTTON",
+   "label": "RIT",
+   "tooltip": "RIT"
+  },
+  {
+   "name": "no_id",
+   "type": "CHECKBUTTON",
+   "label": "No ID",
+   "tooltip": "If true do not send ID; with set commands"
+  }
+ ],
+ "parms": null,
+ "tuningSteps": [
+  {
+   "hz": 1,
+   "modes": [
+    "AM",
+    "CW",
+    "USB",
+    "LSB",
+    "RTTY",
+    "FM",
+    "CWR",
+    "RTTYR",
+    "PKTLSB",
+    "PKTUSB"
+   ]
+  }
+ ],
+ "filters": [
+  {
+   "hz": 2700,
+   "modes": [
+    "USB",
+    "LSB"
+   ]
+  },
+  {
+   "hz": 2800,
+   "modes": [
+    "USB",
+    "LSB"
+   ]
+  },
+  {
+   "hz": 1800,
+   "modes": [
+    "USB",
+    "LSB"
+   ]
+  },
+  {
+   "hz": 2400,
+   "modes": [
+    "USB",
+    "LSB"
+   ]
+  },
+  {
+   "hz": 1000,
+   "modes": [
+    "CW",
+    "CWR"
+   ]
+  },
+  {
+   "hz": 2800,
+   "modes": [
+    "CW",
+    "CWR"
+   ]
+  },
+  {
+   "hz": 50,
+   "modes": [
+    "CW",
+    "CWR"
+   ]
+  },
+  {
+   "hz": 500,
+   "modes": [
+    "CW",
+    "CWR"
+   ]
+  },
+  {
+   "hz": 300,
+   "modes": [
+    "CW",
+    "CWR"
+   ]
+  },
+  {
+   "hz": 2000,
+   "modes": [
+    "RTTY",
+    "RTTYR"
+   ]
+  },
+  {
+   "hz": 2700,
+   "modes": [
+    "RTTY",
+    "RTTYR"
+   ]
+  },
+  {
+   "hz": 500,
+   "modes": [
+    "RTTY",
+    "RTTYR"
+   ]
+  },
+  {
+   "hz": 300,
+   "modes": [
+    "RTTY",
+    "RTTYR"
+   ]
+  },
+  {
+   "hz": 2700,
+   "modes": [
+    "PKTLSB",
+    "PKTUSB"
+   ]
+  },
+  {
+   "hz": 2800,
+   "modes": [
+    "PKTLSB",
+    "PKTUSB"
+   ]
+  },
+  {
+   "hz": 50,
+   "modes": [
+    "PKTLSB",
+    "PKTUSB"
+   ]
+  },
+  {
+   "hz": 2400,
+   "modes": [
+    "PKTLSB",
+    "PKTUSB"
+   ]
+  },
+  {
+   "hz": 500,
+   "modes": [
+    "PKTLSB",
+    "PKTUSB"
+   ]
+  },
+  {
+   "hz": 300,
+   "modes": [
+    "PKTLSB",
+    "PKTUSB"
+   ]
+  },
+  {
+   "hz": 6000,
+   "modes": [
+    "AM"
+   ]
+  },
+  {
+   "hz": 13000,
+   "modes": [
+    "AM"
+   ]
+  },
+  {
+   "hz": 2700,
+   "modes": [
+    "AM"
+   ]
+  },
+  {
+   "hz": 13000,
+   "modes": [
+    "FM"
+   ]
+  }
+ ],
+ "bandwidths": {
+  "AM": {
+   "normal": 6000,
+   "narrow": 2700,
+   "wide": 13000
+  },
+  "CW": {
+   "normal": 1000,
+   "narrow": 50,
+   "wide": 2800
+  },
+  "CWR": {
+   "normal": 1000,
+   "narrow": 50,
+   "wide": 2800
+  },
+  "FM": {
+   "normal": 13000,
+   "narrow": 0,
+   "wide": 0
+  },
+  "LSB": {
+   "normal": 2700,
+   "narrow": 1800,
+   "wide": 2800
+  },
+  "PKTLSB": {
+   "normal": 2700,
+   "narrow": 50,
+   "wide": 2800
+  },
+  "PKTUSB": {
+   "normal": 2700,
+   "narrow": 50,
+   "wide": 2800
+  },
+  "RTTY": {
+   "normal": 2000,
+   "narrow": 500,
+   "wide": 2700
+  },
+  "RTTYR": {
+   "normal": 2000,
+   "narrow": 500,
+   "wide": 2700
+  },
+  "USB": {
+   "normal": 2700,
+   "narrow": 1800,
+   "wide": 2800
+  }
+ },
+ "memories": [
+  {
+   "start": 1,
+   "end": 4,
+   "type": "VOICE",
+   "caps": []
+  },
+  {
+   "start": 1,
+   "end": 4,
+   "type": "MORSE",
+   "caps": []
+  }
+ ],
+ "scanOps": [],
+ "ctcss": null,
+ "dcs": null
+}

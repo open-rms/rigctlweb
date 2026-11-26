@@ -1,0 +1,885 @@
+{
+ "model": "FTDX-10",
+ "mfg": "Yaesu",
+ "hamlib": "Hamlib 4.7.2 2026-06-21T13:07:37Z SHA=40f63488f 64-bit",
+ "rigType": "Other Receiver Transmitter Transceiver",
+ "pttType": "None",
+ "modes": [
+  "AM",
+  "CW",
+  "USB",
+  "LSB",
+  "RTTY",
+  "FM",
+  "CWR",
+  "RTTYR",
+  "PKTLSB",
+  "PKTUSB",
+  "FM-D",
+  "FMN",
+  "AMN",
+  "PKTFMN"
+ ],
+ "vfos": [
+  "VFOA",
+  "VFOB",
+  "MEM"
+ ],
+ "vfoOps": [
+  "CPY",
+  "XCHG",
+  "FROM_VFO",
+  "TO_VFO",
+  "UP",
+  "DOWN",
+  "BAND_UP",
+  "BAND_DOWN",
+  "TUNE",
+  "TOGGLE"
+ ],
+ "getFuncs": [
+  "NB",
+  "COMP",
+  "VOX",
+  "TONE",
+  "TSQL",
+  "FBKIN",
+  "ANF",
+  "NR",
+  "APF",
+  "MON",
+  "MN",
+  "LOCK",
+  "RIT",
+  "TUNER",
+  "XIT"
+ ],
+ "setFuncs": [
+  "NB",
+  "COMP",
+  "VOX",
+  "TONE",
+  "TSQL",
+  "FBKIN",
+  "ANF",
+  "NR",
+  "APF",
+  "MON",
+  "MN",
+  "LOCK",
+  "RIT",
+  "TUNER",
+  "XIT"
+ ],
+ "levels": [
+  {
+   "name": "PREAMP",
+   "min": 0,
+   "max": 20,
+   "step": 10,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "ATT",
+   "min": 0,
+   "max": 18,
+   "step": 0,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "VOXDELAY",
+   "min": 3,
+   "max": 300,
+   "step": 1,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "AF",
+   "min": 0,
+   "max": 1,
+   "step": 0.003922,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "RF",
+   "min": 0,
+   "max": 1,
+   "step": 0.003922,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "SQL",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "IF",
+   "min": -1200,
+   "max": 1200,
+   "step": 20,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "NR",
+   "min": 0,
+   "max": 1,
+   "step": 0.066667,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "CWPITCH",
+   "min": 300,
+   "max": 1050,
+   "step": 10,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "RFPOWER",
+   "min": 0.05,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "MICGAIN",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "KEYSPD",
+   "min": 4,
+   "max": 60,
+   "step": 1,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "NOTCHF",
+   "min": 1,
+   "max": 3200,
+   "step": 10,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "COMP",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "AGC",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "BKINDL",
+   "min": 30,
+   "max": 3000,
+   "step": 1,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "METER",
+   "min": 0,
+   "max": 0,
+   "step": 0,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "VOXGAIN",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "ANTIVOX",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "RAWSTR",
+   "min": 0,
+   "max": 255,
+   "step": 0,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "SWR",
+   "min": 0,
+   "max": 5,
+   "step": 0.003922,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "ALC",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "STRENGTH",
+   "min": 0,
+   "max": 60,
+   "step": 0,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "RFPOWER_METER",
+   "min": 0,
+   "max": 1,
+   "step": 0.003922,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "COMP_METER",
+   "min": 0,
+   "max": 1,
+   "step": 0.003922,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "VD_METER",
+   "min": 0,
+   "max": 1,
+   "step": 0.003922,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "ID_METER",
+   "min": 0,
+   "max": 1,
+   "step": 0.003922,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "MONITOR_GAIN",
+   "min": 0,
+   "max": 1,
+   "step": 0.01,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "NB",
+   "min": 0,
+   "max": 10,
+   "step": 1,
+   "get": true,
+   "set": true
+  },
+  {
+   "name": "RFPOWER_METER_WATTS",
+   "min": 0,
+   "max": 100,
+   "step": 0.003922,
+   "get": true,
+   "set": false
+  },
+  {
+   "name": "BAND_SELECT",
+   "min": 0,
+   "max": 16,
+   "step": 1,
+   "get": true,
+   "set": true
+  }
+ ],
+ "getParms": [
+  "BANDSELECT"
+ ],
+ "setParms": [
+  "BANDSELECT"
+ ],
+ "preamps": [
+  10,
+  20
+ ],
+ "attenuators": [
+  6,
+  12,
+  18
+ ],
+ "agcLevels": [
+  {
+   "value": 0,
+   "name": "OFF"
+  },
+  {
+   "value": 2,
+   "name": "FAST"
+  },
+  {
+   "value": 5,
+   "name": "MEDIUM"
+  },
+  {
+   "value": 3,
+   "name": "SLOW"
+  },
+  {
+   "value": 6,
+   "name": "AUTO"
+  }
+ ],
+ "maxRit": 9999,
+ "maxXit": 9999,
+ "canSplit": true,
+ "canPtt": true,
+ "hasMemory": true,
+ "targetableVfo": true,
+ "can": {
+  "Reset": false,
+  "Scan": true,
+  "ctl Mem/VFO": true,
+  "decode Events": false,
+  "get Ant": false,
+  "get CTCSS": true,
+  "get CTCSS Squelch": true,
+  "get Channel": true,
+  "get Conf": false,
+  "get DCD": false,
+  "get DCS": false,
+  "get DCS Squelch": false,
+  "get Frequency": true,
+  "get Func": true,
+  "get Info": true,
+  "get Level": true,
+  "get Mem": true,
+  "get Mode": true,
+  "get PTT": true,
+  "get Param": false,
+  "get Power Stat": true,
+  "get RIT": true,
+  "get Repeater Duplex": true,
+  "get Repeater Offset": true,
+  "get Split Freq": true,
+  "get Split Mode": true,
+  "get Split VFO": true,
+  "get Transceive": true,
+  "get Tuning Step": true,
+  "get VFO": true,
+  "get XIT": true,
+  "recv DTMF": false,
+  "send DTMF": false,
+  "send Morse": true,
+  "send Voice": true,
+  "set Ant": false,
+  "set Bank": false,
+  "set CTCSS": true,
+  "set CTCSS Squelch": true,
+  "set Channel": true,
+  "set Conf": true,
+  "set DCS": false,
+  "set DCS Squelch": false,
+  "set Frequency": true,
+  "set Func": true,
+  "set Level": true,
+  "set Mem": true,
+  "set Mode": true,
+  "set PTT": true,
+  "set Param": false,
+  "set Power Stat": true,
+  "set RIT": true,
+  "set Repeater Duplex": true,
+  "set Repeater Offset": true,
+  "set Split Freq": true,
+  "set Split Mode": true,
+  "set Split VFO": true,
+  "set Transceive": true,
+  "set Tuning Step": true,
+  "set VFO": true,
+  "set XIT": true,
+  "stop Morse": false,
+  "wait Morse": true
+ },
+ "extLevels": [
+  {
+   "name": "ROOFINGFILTER",
+   "type": "COMBO",
+   "label": "Roofing filter",
+   "tooltip": "Roofing filter",
+   "values": [
+    {
+     "value": 0,
+     "name": "AUTO"
+    },
+    {
+     "value": 1,
+     "name": "12 kHz"
+    },
+    {
+     "value": 2,
+     "name": "3 kHz"
+    },
+    {
+     "value": 3,
+     "name": "500 Hz"
+    },
+    {
+     "value": 4,
+     "name": "300 Hz (optional)"
+    }
+   ]
+  },
+  {
+   "name": "KEYER",
+   "type": "CHECKBUTTON",
+   "label": "Keyer",
+   "tooltip": "Keyer on/off"
+  },
+  {
+   "name": "APF_FREQ",
+   "type": "NUMERIC",
+   "label": "APF frequency",
+   "tooltip": "Audio peak filter frequency",
+   "range": {
+    "min": -250,
+    "max": 250,
+    "step": 10
+   }
+  },
+  {
+   "name": "APF_WIDTH",
+   "type": "COMBO",
+   "label": "APF width",
+   "tooltip": "Audio peak filter width",
+   "values": [
+    {
+     "value": 0,
+     "name": "Narrow"
+    },
+    {
+     "value": 1,
+     "name": "Medium"
+    },
+    {
+     "value": 2,
+     "name": "Wide"
+    }
+   ]
+  },
+  {
+   "name": "CONTOUR",
+   "type": "CHECKBUTTON",
+   "label": "Contour",
+   "tooltip": "Contour on/off"
+  },
+  {
+   "name": "CONTOUR_FREQ",
+   "type": "NUMERIC",
+   "label": "Contour frequency",
+   "tooltip": "Contour frequency",
+   "range": {
+    "min": 10,
+    "max": 3200,
+    "step": 1
+   }
+  },
+  {
+   "name": "CONTOUR_LEVEL",
+   "type": "NUMERIC",
+   "label": "Contour level",
+   "tooltip": "Contour level (dB)",
+   "range": {
+    "min": -40,
+    "max": 20,
+    "step": 1
+   }
+  },
+  {
+   "name": "CONTOUR_WIDTH",
+   "type": "NUMERIC",
+   "label": "Contour width",
+   "tooltip": "Contour width",
+   "range": {
+    "min": 1,
+    "max": 11,
+    "step": 1
+   }
+  }
+ ],
+ "extFuncs": null,
+ "extParms": null,
+ "parms": [
+  {
+   "name": "BANDSELECT",
+   "get": true,
+   "set": true,
+   "range": {
+    "min": 0,
+    "max": 0,
+    "step": 0
+   },
+   "options": [
+    "BAND160M",
+    "BAND80M",
+    "BANDUNUSED",
+    "BAND40M",
+    "BAND30M",
+    "BAND20M",
+    "BAND17M",
+    "BAND15M",
+    "BAND12M",
+    "BAND10M",
+    "BAND6M",
+    "BANDGEN",
+    "BANDMW"
+   ]
+  }
+ ],
+ "tuningSteps": [
+  {
+   "hz": 10,
+   "modes": [
+    "CW",
+    "USB",
+    "LSB",
+    "RTTY",
+    "CWR",
+    "RTTYR",
+    "PKTLSB",
+    "PKTUSB"
+   ]
+  },
+  {
+   "hz": 100,
+   "modes": [
+    "CW",
+    "USB",
+    "LSB",
+    "RTTY",
+    "CWR",
+    "RTTYR",
+    "PKTLSB",
+    "PKTUSB"
+   ]
+  },
+  {
+   "hz": 100,
+   "modes": [
+    "AM",
+    "AMN"
+   ]
+  },
+  {
+   "hz": 1000,
+   "modes": [
+    "AM",
+    "AMN"
+   ]
+  },
+  {
+   "hz": 100,
+   "modes": [
+    "FM",
+    "FM-D",
+    "FMN",
+    "PKTFMN"
+   ]
+  },
+  {
+   "hz": 1000,
+   "modes": [
+    "FM",
+    "FM-D",
+    "FMN",
+    "PKTFMN"
+   ]
+  }
+ ],
+ "filters": [
+  {
+   "hz": 600,
+   "modes": [
+    "CW",
+    "RTTY",
+    "CWR",
+    "RTTYR",
+    "PKTLSB",
+    "PKTUSB"
+   ]
+  },
+  {
+   "hz": 300,
+   "modes": [
+    "CW",
+    "RTTY",
+    "CWR",
+    "RTTYR",
+    "PKTLSB",
+    "PKTUSB"
+   ]
+  },
+  {
+   "hz": 2400,
+   "modes": [
+    "CW",
+    "RTTY",
+    "CWR",
+    "RTTYR",
+    "PKTLSB",
+    "PKTUSB"
+   ]
+  },
+  {
+   "hz": 1200,
+   "modes": [
+    "CW",
+    "RTTY",
+    "CWR",
+    "RTTYR",
+    "PKTLSB",
+    "PKTUSB"
+   ]
+  },
+  {
+   "hz": 2400,
+   "modes": [
+    "USB",
+    "LSB"
+   ]
+  },
+  {
+   "hz": 1800,
+   "modes": [
+    "USB",
+    "LSB"
+   ]
+  },
+  {
+   "hz": 3000,
+   "modes": [
+    "USB",
+    "LSB"
+   ]
+  },
+  {
+   "hz": 9000,
+   "modes": [
+    "AM"
+   ]
+  },
+  {
+   "hz": 6000,
+   "modes": [
+    "AMN"
+   ]
+  },
+  {
+   "hz": 16000,
+   "modes": [
+    "FM",
+    "FM-D"
+   ]
+  },
+  {
+   "hz": 9000,
+   "modes": [
+    "FMN",
+    "PKTFMN"
+   ]
+  }
+ ],
+ "bandwidths": {
+  "AM": {
+   "normal": 9000,
+   "narrow": 0,
+   "wide": 0
+  },
+  "AMN": {
+   "normal": 6000,
+   "narrow": 0,
+   "wide": 0
+  },
+  "CW": {
+   "normal": 600,
+   "narrow": 300,
+   "wide": 2400
+  },
+  "CWR": {
+   "normal": 600,
+   "narrow": 300,
+   "wide": 2400
+  },
+  "FM": {
+   "normal": 16000,
+   "narrow": 0,
+   "wide": 0
+  },
+  "FM-D": {
+   "normal": 16000,
+   "narrow": 0,
+   "wide": 0
+  },
+  "FMN": {
+   "normal": 9000,
+   "narrow": 0,
+   "wide": 0
+  },
+  "LSB": {
+   "normal": 2400,
+   "narrow": 1800,
+   "wide": 3000
+  },
+  "PKTLSB": {
+   "normal": 600,
+   "narrow": 300,
+   "wide": 2400
+  },
+  "PKTUSB": {
+   "normal": 600,
+   "narrow": 300,
+   "wide": 2400
+  },
+  "RTTY": {
+   "normal": 600,
+   "narrow": 300,
+   "wide": 2400
+  },
+  "RTTYR": {
+   "normal": 600,
+   "narrow": 300,
+   "wide": 2400
+  },
+  "USB": {
+   "normal": 2400,
+   "narrow": 1800,
+   "wide": 3000
+  }
+ },
+ "memories": [
+  {
+   "start": 1,
+   "end": 99,
+   "type": "MEM",
+   "caps": [
+    "FREQ",
+    "MODE",
+    "RPTRSHIFT",
+    "RIT",
+    "XIT",
+    "TONE",
+    "CTCSS"
+   ]
+  },
+  {
+   "start": 501,
+   "end": 510,
+   "type": "BAND",
+   "caps": [
+    "FREQ",
+    "MODE",
+    "RPTRSHIFT",
+    "RIT",
+    "XIT",
+    "TONE",
+    "CTCSS"
+   ]
+  },
+  {
+   "start": 1,
+   "end": 5,
+   "type": "VOICE",
+   "caps": []
+  },
+  {
+   "start": 1,
+   "end": 5,
+   "type": "MORSE",
+   "caps": []
+  }
+ ],
+ "scanOps": [
+  "VFO"
+ ],
+ "ctcss": [
+  670,
+  693,
+  719,
+  744,
+  770,
+  797,
+  825,
+  854,
+  885,
+  915,
+  948,
+  974,
+  1000,
+  1035,
+  1072,
+  1109,
+  1148,
+  1188,
+  1230,
+  1273,
+  1318,
+  1365,
+  1413,
+  1462,
+  1514,
+  1567,
+  1598,
+  1622,
+  1655,
+  1679,
+  1713,
+  1738,
+  1773,
+  1799,
+  1835,
+  1862,
+  1899,
+  1928,
+  1966,
+  1995,
+  2035,
+  2065,
+  2107,
+  2181,
+  2257,
+  2291,
+  2336,
+  2418,
+  2503,
+  2541
+ ],
+ "dcs": null
+}

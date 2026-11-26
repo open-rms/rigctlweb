@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions and discussion
+    url: https://github.com/open-rms/rigctlweb/discussions
+    about: Ask usage questions and share ideas in GitHub Discussions.
+  - name: Report a security vulnerability
+    url: https://github.com/open-rms/rigctlweb/blob/main/SECURITY.md
+    about: Do not open a public issue for vulnerabilities. Follow SECURITY.md.

@@ -1,0 +1,45 @@
+name: Radio support
+description: Quirks or missing controls for a specific radio
+labels: ["radio-support"]
+body:
+  - type: input
+    id: model
+    attributes:
+      label: Radio make and model
+      placeholder: Yaesu FT-991A
+    validations:
+      required: true
+  - type: input
+    id: hamlib_model
+    attributes:
+      label: rigctld model number
+      description: The `-m` value you pass to rigctld.
+      placeholder: "1035"
+    validations:
+      required: true
+  - type: textarea
+    id: works
+    attributes:
+      label: What works
+    validations:
+      required: true
+  - type: textarea
+    id: broken
+    attributes:
+      label: What does not work or is missing
+      description: Describe each control or readout and what you see instead.
+    validations:
+      required: true
+  - type: textarea
+    id: caps
+    attributes:
+      label: dump_caps output
+      description: Output of `rigctl -m <n> -r <dev> \dump_caps`. Paste it or attach it as a file.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Other notes
+      description: Firmware version, menu settings, serial or CAT settings that matter.

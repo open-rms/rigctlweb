@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+env:
+  GO_VERSION: "1.27.4"
+  NODE_VERSION: "26.13.1"
+  PNPM_VERSION: "12.18.0"
+
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v7
+        with:
+          go-version: ${{ env.GO_VERSION }}
+      - name: Install Hamlib
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libhamlib-utils
+      - name: Start dummy rigctld
+        run: |
+          rigctld -m 1 -t 4540 &
+          sleep 2
+      - name: Vet
+        run: go vet ./...
+      - name: Test
+        run: go test ./...
+        env:
+
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+        with:
+          version: ${{ env.PNPM_VERSION }}
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+          cache-dependency-path: web/pnpm-lock.yaml
+      - run: pnpm -C web install --frozen-lockfile
+      - run: pnpm -C web check
+      - run: pnpm -C web test
+      - run: pnpm -C web lint
+      - run: pnpm -C web build

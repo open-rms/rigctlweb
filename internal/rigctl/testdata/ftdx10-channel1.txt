@@ -1,0 +1,8 @@
+Channel: 1, Name: ''
+VFO: currVFO, Antenna: 0, Split: OFF
+Freq:   7.0000000 MHz	Mode:   LSB	Width:   0.0 Hz
+txFreq: 0.0 Hz	txMode: 	txWidth: 0.0 Hz
+Shift: None, Offset: 0.0 Hz, Step: 0.0 Hz, RIT: 0.0 Hz, XIT: 0.0 Hz
+CTCSS: 0.0Hz, CTCSSsql: 0.0Hz, DCS: 0.0, DCSsql: 0.0
+Functions: 
+Levels: PREAMP: 0,	 ATT: 0,	 AF: 0%,	 RFPOWER: 0%

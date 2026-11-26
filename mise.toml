@@ -1,0 +1,40 @@
+[tools]
+go = "1.27.4"
+node = "26.13.1"
+pnpm = "12.18.0"
+
+[tasks.setup]
+description = "Install web dependencies"
+run = "pnpm -C web install"
+
+[tasks.web]
+description = "Build the web UI into web/dist (embedded in the binary)"
+run = "pnpm -C web build && touch web/dist/.gitkeep"
+
+[tasks.build]
+description = "Build the single binary (UI + server) to bin/rigctlweb"
+depends = ["web"]
+run = "go build -trimpath -ldflags '-s -w -X main.version=dev' -o bin/rigctlweb ./cmd/rigctlweb"
+
+[tasks.dev]
+description = "Dummy rigctld + Go server (:8480) + Vite dev server (:5173, proxies API)"
+run = '''
+rigctld -m 1 -t 4540 >/dev/null 2>&1 &
+RIG=$!
+go run ./cmd/rigctlweb -dev-no-auth -listen 127.0.0.1:8480 -rig 127.0.0.1:4540 &
+SRV=$!
+trap 'kill $RIG $SRV 2>/dev/null' EXIT
+pnpm -C web dev
+'''
+
+[tasks.test]
+description = "Go tests (uses hamlib's dummy rig when rigctld is installed)"
+run = "go vet ./... && go test ./..."
+
+[tasks.check]
+description = "Type-check the web UI and run its tests"
+run = "pnpm -C web check && pnpm -C web test"
+
+[tasks.lint]
+description = "Format check Go and lint web"
+run = "test -z \"$(gofmt -l cmd internal web)\" && pnpm -C web lint"
