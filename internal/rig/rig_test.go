@@ -24,7 +24,7 @@ func startDummy(t *testing.T) string {
 	l, _ := net.Listen("tcp", "127.0.0.1:0")
 	port := l.Addr().(*net.TCPAddr).Port
 	_ = l.Close()
-	cmd := exec.Command(bin, "-m", "1", "-t", strconv.Itoa(port), "-T", "127.0.0.1")
+	cmd := exec.Command(bin, "-m", "1", "-P", "RIG", "-t", strconv.Itoa(port), "-T", "127.0.0.1")
 	if err := cmd.Start(); err != nil {
 		t.Fatal(err)
 	}
@@ -223,8 +223,14 @@ func TestSlowBackgroundReadDoesNotStallCommands(t *testing.T) {
 	if r.Caps() == nil {
 		t.Fatal("never connected")
 	}
-	// Let the poller cycle through its background reads for a while.
-	time.Sleep(12 * time.Second)
+	// Let the poller reach the slow read and bench it. How long the first cycle takes depends on
+	// the Hamlib version (4.6's dummy times out on some parms), so wait for the read itself.
+	for end := time.Now().Add(40 * time.Second); hits.Load() == 0 && time.Now().Before(end); time.Sleep(100 * time.Millisecond) {
+	}
+	if hits.Load() == 0 {
+		t.Fatal("the poller never read COMP")
+	}
+	time.Sleep(4 * time.Second) // the slow read finishes and the next cycles skip it
 	if n := hits.Load(); n > 2 {
 		t.Errorf("get_func COMP was polled %d times; a slow read should be benched after one or two", n)
 	}
